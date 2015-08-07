@@ -1,0 +1,179 @@
+<html>
+  <head>
+    <title>libsoundio</title>
+    <script src="highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="github-gist.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,400|Open+Sans:300|Ubuntu+Mono:400' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="navigation">
+      <nav class="container">
+        <div class="logo">libsoundio</div>
+        <ul class="nav-links">
+          <li><a href="https://github.com/andrewrk/libsoundio/tree/master/example">Documentation</a></li>
+          <li><a href="https://github.com/andrewrk/libsoundio">Github</a></li>
+          <li><a href="https://github.com/andrewrk/libsoundio#roadmap">Roadmap</a></li>
+          <li><a href="https://www.bountysource.com/teams/libsoundio">Support This Project</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="hero-area">
+      <div class="valign-parent">
+        <div class="valign-child">
+         <h1>cross-platform audio input and output</h1>
+         <h2>suitable for real-time & consumer software</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <p>C99 library providing cross-platform audio input and output. The API is suitable for real-time software such as digital audio workstations as well as consumer software such as music players.</p>
+
+      <p>This library is an abstraction; however in the delicate balance between performance and power, and API convenience, the scale is tipped closer to the former. Features that only exist in some sound backends are exposed.</p>
+
+      <p>The goal of this library is to be the only resource needed to implement top quality audio playback and capture on desktop and laptop systems. This includes detailed documentation explaining how audio works on each supported backend, how they are abstracted to provide the libsoundio API, and what assumptions you can and cannot make in order to guarantee consistent, reliable behavior on every platform.</p>
+
+      <p>This project is a work-in-progress.</p>
+      <h2>Features & Limitations</h2>
+      <div class="features-limitations">
+        <ul>
+          <li>Supported backends:
+            <ul>
+              <li><a href="http://jackaudio.org/">JACK</a></li>
+              <li><a href="http://www.freedesktop.org/wiki/Software/PulseAudio/">PulseAudio</a></li>
+              <li><a href="http://www.alsa-project.org/">ALSA</a></li>
+              <li><a href="https://developer.apple.com/library/mac/documentation/MusicAudio/Conceptual/CoreAudioOverview/Introduction/Introduction.html">CoreAudio</a></li>
+              <li>Dummy (silence)</li>
+              <li>(planned) <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd371455%28v=vs.85%29.aspx">WASAPI</a></li>
+              <li>(planned) <a href="http://www.asio4all.com/">ASIO</a></li>
+            </ul>
+          </li>
+          <li>Supports optimal usage of each supported backend. The same API does the right thing whether the backend has a fixed buffer size, such as on JACK and CoreAudio, or whether it allows directly managing the buffer, such as on ALSA or PulseAudio.</li>
+          <li>C library. Depends only on the respective backend API libraries and libc. Does not depend on libstdc++, and does not have exceptions, run-time type information, or setjmp.</li>
+          <li>Errors are communicated via return codes, not logging to stdio. This is one of my many complaints against PortAudio.</li>
+          <li>Supports channel layouts (also known as channel maps), important for surround sound applications.</li>
+          <li>Ability to monitor devices and get an event when available devices change.</li>
+          <li>Ability to get an event when the backend is disconnected, for example when the JACK server or PulseAudio server shuts down.</li>
+          <li>Detects which input device is default and which output device is default.</li>
+          <li>Ability to connect to multiple backends at once. For example you could have an ALSA device open and a JACK device open at the same time.</li>
+          <li>Meticulously checks all return codes and memory allocations and uses meaningful error codes.</li>
+        </ul>
+      </div>
+      <h2>Basic Sine Wave Example</h2>
+<pre><code>#include &lt;soundio/soundio.h&gt;
+
+#include &lt;stdio.h&gt;
+#include &lt;stdarg.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;math.h&gt;
+
+__attribute__ ((cold))
+__attribute__ ((noreturn))
+__attribute__ ((format (printf, 1, 2)))
+static void panic(const char *format, ...) {
+    va_list ap;
+    va_start(ap, format);
+    vfprintf(stderr, format, ap);
+    fprintf(stderr, "\n");
+    va_end(ap);
+    abort();
+}
+
+static const float PI = 3.1415926535f;
+static float seconds_offset = 0.0f;
+static void write_callback(struct SoundIoOutStream *outstream,
+        int frame_count_min, int frame_count_max)
+{
+    const struct SoundIoChannelLayout *layout = &amp;outstream-&gt;layout;
+    float float_sample_rate = outstream-&gt;sample_rate;
+    float seconds_per_frame = 1.0f / float_sample_rate;
+    struct SoundIoChannelArea *areas;
+    int frames_left = frame_count_max;
+    int err;
+
+    while (frames_left &gt; 0) {
+        int frame_count = frames_left;
+
+        if ((err = soundio_outstream_begin_write(outstream, &amp;areas, &amp;frame_count)))
+            panic("%s", soundio_strerror(err));
+
+        if (!frame_count)
+            break;
+
+        float pitch = 440.0f;
+        float radians_per_second = pitch * 2.0f * PI;
+        for (int frame = 0; frame < frame_count; frame += 1) {
+            float sample = sinf((seconds_offset + frame * seconds_per_frame) * radians_per_second);
+            for (int channel = 0; channel &lt; layout-&gt;channel_count; channel += 1) {
+                float *ptr = (float*)(areas[channel].ptr + areas[channel].step * frame);
+                *ptr = sample;
+            }
+        }
+        seconds_offset += seconds_per_frame * frame_count;
+
+        if ((err = soundio_outstream_end_write(outstream)))
+            panic("%s", soundio_strerror(err));
+
+        frames_left -= frame_count;
+    }
+}
+
+int main(int argc, char **argv) {
+    int err;
+    struct SoundIo *soundio = soundio_create();
+    if (!soundio)
+        panic("out of memory");
+
+    if ((err = soundio_connect(soundio)))
+        panic("error connecting: %s", soundio_strerror(err));
+
+    soundio_flush_events(soundio);
+
+    int default_out_device_index = soundio_default_output_device_index(soundio);
+    if (default_out_device_index &lt; 0)
+        panic("no output device found");
+
+    struct SoundIoDevice *device = soundio_get_output_device(soundio, default_out_device_index);
+    if (!device)
+        panic("out of memory");
+
+    fprintf(stderr, "Output device: %s\n", device-&gt;name);
+
+    struct SoundIoOutStream *outstream = soundio_outstream_create(device);
+    outstream-&gt;format = SoundIoFormatFloat32NE;
+    outstream-&gt;write_callback = write_callback;
+
+    if ((err = soundio_outstream_open(outstream)))
+        panic("unable to open device: %s", soundio_strerror(err));
+
+    if (outstream-&gt;layout_error)
+        fprintf(stderr, "unable to set channel layout: %s\n", soundio_strerror(outstream-&gt;layout_error));
+
+    if ((err = soundio_outstream_start(outstream)))
+        panic("unable to start device: %s", soundio_strerror(err));
+
+    for (;;)
+        soundio_wait_events(soundio);
+
+    soundio_outstream_destroy(outstream);
+    soundio_device_unref(device);
+    soundio_destroy(soundio);
+    return 0;
+}
+      </code></pre>
+
+      <h2>Get started</h2>
+      <p>This is still a work-in-progress. If you want to see where the current progress is at, or maybe consider <a href="https://github.com/andrewrk/libsoundio#contributing">contributing</a>, feel free to pull the project from Github and build it on your machine.</p>
+      <p>The most up-to-date detailed instructions can be found on the project's README <a href="https://github.com/andrewrk/libsoundio#building">here</a>.</p>
+      <h2>About</h2>
+      <p>The driving motivation behind building out this project is to function as a dependency for <a href="http://genesisdaw.org/">Genesis Digital Audio Workstation</a>. It's also going to be used as a dependency for <a href="https://github.com/andrewrk/libgroove">libgroove</a>, which is a dependency of <a href="https://github.com/andrewrk/groovebasin">GrooveBasin</a>. libgroove is being used to test libsoundio.</p>
+      <p>This project is being developed by <a href="http://andrewkelley.me">Andrew Kelley</a>, who can be found on <a href="https://github.com/andrewrk/">Github</a>. There is also a <a href="https://www.bountysource.com/teams/libsoundio">BountySource</a> being maintained as well.</p>
+    </div>
+    <footer>
+    </footer>
+  </body>
+</html>
