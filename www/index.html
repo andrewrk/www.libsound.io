@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>libsoundio</title>
+    <title>libsoundio: cross-platform audio input and output</title>
     <script src="highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <link href="style.css" rel="stylesheet" type="text/css">
@@ -13,7 +13,7 @@
         <div class="logo">libsoundio</div>
         <ul class="nav-links">
           <li><a href="https://github.com/andrewrk/libsoundio/tree/master/example">Documentation</a></li>
-          <li><a href="https://github.com/andrewrk/libsoundio">Github</a></li>
+          <li><a href="https://github.com/andrewrk/libsoundio">GitHub</a></li>
           <li><a href="https://github.com/andrewrk/libsoundio#roadmap">Roadmap</a></li>
           <li><a href="https://www.bountysource.com/teams/libsoundio">Support This Project</a></li>
         </ul>
@@ -37,7 +37,7 @@
       <p>The goal of this library is to be the only resource needed to implement top quality audio playback and capture on desktop and laptop systems. This includes detailed documentation explaining how audio works on each supported backend, how they are abstracted to provide the libsoundio API, and what assumptions you can and cannot make in order to guarantee consistent, reliable behavior on every platform.</p>
 
       <p>This project is a work-in-progress.</p>
-      <h2>Features & Limitations</h2>
+      <h2>Features &amp; Limitations</h2>
       <div class="features-limitations">
         <ul>
           <li>Supported backends:
@@ -52,8 +52,8 @@
             </ul>
           </li>
           <li>Supports optimal usage of each supported backend. The same API does the right thing whether the backend has a fixed buffer size, such as on JACK and CoreAudio, or whether it allows directly managing the buffer, such as on ALSA or PulseAudio.</li>
-          <li>C library. Depends only on the respective backend API libraries and libc. Does not depend on libstdc++, and does not have exceptions, run-time type information, or setjmp.</li>
-          <li>Errors are communicated via return codes, not logging to stdio. This is one of my many complaints against PortAudio.</li>
+          <li>C library. Depends only on the respective backend API libraries and libc. Does not depend on libstdc++, and does not have exceptions, run-time type information, or <a href="http://latentcontent.net/2007/12/05/libpng-worst-api-ever/">setjmp</a>.</li>
+          <li>Errors are communicated via return codes, not logging to stdio.</li>
           <li>Supports channel layouts (also known as channel maps), important for surround sound applications.</li>
           <li>Ability to monitor devices and get an event when available devices change.</li>
           <li>Ability to get an event when the backend is disconnected, for example when the JACK server or PulseAudio server shuts down.</li>
@@ -163,15 +163,14 @@ int main(int argc, char **argv) {
     soundio_device_unref(device);
     soundio_destroy(soundio);
     return 0;
-}
-      </code></pre>
+}</code></pre>
 
-      <h2>Get started</h2>
-      <p>This is still a work-in-progress. If you want to see where the current progress is at, or maybe consider <a href="https://github.com/andrewrk/libsoundio#contributing">contributing</a>, feel free to pull the project from Github and build it on your machine.</p>
+      <h2>Get Started</h2>
+      <p>This is still a work-in-progress. If you want to see where the current progress is at, or maybe consider <a href="https://github.com/andrewrk/libsoundio#contributing">contributing</a>, feel free to pull the project from GitHub and build it on your machine.</p>
       <p>The most up-to-date detailed instructions can be found on the project's README <a href="https://github.com/andrewrk/libsoundio#building">here</a>.</p>
       <h2>About</h2>
       <p>The driving motivation behind building out this project is to function as a dependency for <a href="http://genesisdaw.org/">Genesis Digital Audio Workstation</a>. It's also going to be used as a dependency for <a href="https://github.com/andrewrk/libgroove">libgroove</a>, which is a dependency of <a href="https://github.com/andrewrk/groovebasin">GrooveBasin</a>. libgroove is being used to test libsoundio.</p>
-      <p>This project is being developed by <a href="http://andrewkelley.me">Andrew Kelley</a>, who can be found on <a href="https://github.com/andrewrk/">Github</a>. There is also a <a href="https://www.bountysource.com/teams/libsoundio">BountySource</a> being maintained as well.</p>
+      <p>This project is being developed by <a href="http://andrewkelley.me">Andrew Kelley</a>, who can be found on <a href="https://github.com/andrewrk/">GitHub</a>. There is a <a href="https://www.bountysource.com/teams/libsoundio">BountySource</a> being maintained as well.</p>
     </div>
     <footer>
     </footer>
