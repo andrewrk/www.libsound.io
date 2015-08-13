@@ -49,6 +49,12 @@
               <li>(planned) <a href="http://www.asio4all.com/">ASIO</a></li>
             </ul>
           </li>
+          <li>
+          Exposes both raw devices and shared devices. Raw devices give you the best
+          performance but prevent other applications from using them. Shared devices
+          are default and usually provide sample rate conversion and format
+          conversion.
+          </li>
           <li>Supports optimal usage of each supported backend. The same API does the right thing whether the backend has a fixed buffer size, such as on JACK and CoreAudio, or whether it allows directly managing the buffer, such as on ALSA or PulseAudio.</li>
           <li>C library. Depends only on the respective backend API libraries and libc. Does not depend on libstdc++, and does not have exceptions, run-time type information, or <a href="http://latentcontent.net/2007/12/05/libpng-worst-api-ever/">setjmp</a>.</li>
           <li>Errors are communicated via return codes, not logging to stdio.</li>
