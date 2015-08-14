@@ -45,8 +45,7 @@
               <li><a href="http://www.alsa-project.org/">ALSA</a></li>
               <li><a href="https://developer.apple.com/library/mac/documentation/MusicAudio/Conceptual/CoreAudioOverview/Introduction/Introduction.html">CoreAudio</a></li>
               <li>Dummy (silence)</li>
-              <li>(planned) <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd371455%28v=vs.85%29.aspx">WASAPI</a></li>
-              <li>(planned) <a href="http://www.asio4all.com/">ASIO</a></li>
+              <li>(in progress) <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd371455%28v=vs.85%29.aspx">WASAPI</a></li>
             </ul>
           </li>
           <li>
@@ -54,6 +53,11 @@
           performance but prevent other applications from using them. Shared devices
           are default and usually provide sample rate conversion and format
           conversion.
+          </li>
+          <li>
+          Exposes both device id and friendly name. id you could save in a config file
+          because it persists between devices becoming plugged and unplugged, while
+          friendly name is suitable for exposing to users.
           </li>
           <li>Supports optimal usage of each supported backend. The same API does the right thing whether the backend has a fixed buffer size, such as on JACK and CoreAudio, or whether it allows directly managing the buffer, such as on ALSA or PulseAudio.</li>
           <li>C library. Depends only on the respective backend API libraries and libc. Does not depend on libstdc++, and does not have exceptions, run-time type information, or <a href="http://latentcontent.net/2007/12/05/libpng-worst-api-ever/">setjmp</a>.</li>
