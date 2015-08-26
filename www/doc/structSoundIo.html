@@ -89,18 +89,21 @@ Data Fields</h2></td></tr>
 <tr class="memitem:ac9ac4828b342af8458afbdbe4500f862"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSoundIo.html#ac9ac4828b342af8458afbdbe4500f862">on_events_signal</a> )(struct <a class="el" href="structSoundIo.html">SoundIo</a> *)</td></tr>
 <tr class="memdesc:ac9ac4828b342af8458afbdbe4500f862"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional callback.  <a href="#ac9ac4828b342af8458afbdbe4500f862">More...</a><br/></td></tr>
 <tr class="separator:ac9ac4828b342af8458afbdbe4500f862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5f9243c5c296f7b073c4fe1831d4d8d"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="soundio_8h.html#a27c98a78adca62ed32305d7433e8ca47">SoundIoBackend</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSoundIo.html#ac5f9243c5c296f7b073c4fe1831d4d8d">current_backend</a></td></tr>
+<tr class="memdesc:ac5f9243c5c296f7b073c4fe1831d4d8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read-only.  <a href="#ac5f9243c5c296f7b073c4fe1831d4d8d">More...</a><br/></td></tr>
+<tr class="separator:ac5f9243c5c296f7b073c4fe1831d4d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d7782959728999bd6dcc8c7633a0d8a"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSoundIo.html#a4d7782959728999bd6dcc8c7633a0d8a">app_name</a></td></tr>
 <tr class="memdesc:a4d7782959728999bd6dcc8c7633a0d8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional: Application name.  <a href="#a4d7782959728999bd6dcc8c7633a0d8a">More...</a><br/></td></tr>
 <tr class="separator:a4d7782959728999bd6dcc8c7633a0d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81f4db36631b61ffde57b149698f59f6"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSoundIo.html#a81f4db36631b61ffde57b149698f59f6">emit_rtprio_warning</a> )(void)</td></tr>
+<tr class="memdesc:a81f4db36631b61ffde57b149698f59f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional: Real time priority warning.  <a href="#a81f4db36631b61ffde57b149698f59f6">More...</a><br/></td></tr>
+<tr class="separator:a81f4db36631b61ffde57b149698f59f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3cdd5837bcabca44804bbd70069866b"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSoundIo.html#ac3cdd5837bcabca44804bbd70069866b">jack_info_callback</a> )(const char *msg)</td></tr>
 <tr class="memdesc:ac3cdd5837bcabca44804bbd70069866b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional: JACK info callback.  <a href="#ac3cdd5837bcabca44804bbd70069866b">More...</a><br/></td></tr>
 <tr class="separator:ac3cdd5837bcabca44804bbd70069866b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a504a1420d7244edaabf039b12c846959"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSoundIo.html#a504a1420d7244edaabf039b12c846959">jack_error_callback</a> )(const char *msg)</td></tr>
 <tr class="memdesc:a504a1420d7244edaabf039b12c846959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional: JACK error callback.  <a href="#a504a1420d7244edaabf039b12c846959">More...</a><br/></td></tr>
 <tr class="separator:a504a1420d7244edaabf039b12c846959"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5f9243c5c296f7b073c4fe1831d4d8d"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="soundio_8h.html#a27c98a78adca62ed32305d7433e8ca47">SoundIoBackend</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSoundIo.html#ac5f9243c5c296f7b073c4fe1831d4d8d">current_backend</a></td></tr>
-<tr class="memdesc:ac5f9243c5c296f7b073c4fe1831d4d8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read-only.  <a href="#ac5f9243c5c296f7b073c4fe1831d4d8d">More...</a><br/></td></tr>
-<tr class="separator:ac5f9243c5c296f7b073c4fe1831d4d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The size of this struct is not part of the API or ABI. </p>
@@ -132,7 +135,22 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Read-only. </p>
-<p>After calling <a class="el" href="soundio_8h.html#af9cb2a86f2779ed84be6af6618cf7c63" title="This is a convenience function you could implement yourself if you wanted to. ">soundio_connect</a> or <a class="el" href="soundio_8h.html#a397623ded316028fcdc57ed59d5f6815" title="Instead of calling soundio_connect you may call this function to try a specific backend. ">soundio_connect_backend</a>, this field tells which backend is currently connected. </p>
+<p>After calling <a class="el" href="soundio_8h.html#abdace6c0ee81959e4284cfc36a5ce66d" title="Tries soundio_connect_backend on all available backends in order. ">soundio_connect</a> or <a class="el" href="soundio_8h.html#aaa26217716f3cd99932f988a017c56f1" title="Instead of calling soundio_connect you may call this function to try a specific backend. ">soundio_connect_backend</a>, this field tells which backend is currently connected. </p>
+
+</div>
+</div>
+<a class="anchor" id="a81f4db36631b61ffde57b149698f59f6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* SoundIo::emit_rtprio_warning)(void)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Optional: Real time priority warning. </p>
+<p>This callback is fired when making thread real-time priority failed. By default, it will print to stderr only the first time it is called a message instructing the user how to configure their system to allow real-time priority threads. </p>
 
 </div>
 </div>
@@ -162,7 +180,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Optional: JACK info callback. </p>
-<p>By default, libsoundio sets this to an empty function in order to silence stdio messages from JACK. You may override the behavior by setting this to <code>NULL</code> or providing your own function. This is registered with JACK regardless of whether <a class="el" href="soundio_8h.html#a397623ded316028fcdc57ed59d5f6815" title="Instead of calling soundio_connect you may call this function to try a specific backend. ">soundio_connect_backend</a> succeeds. </p>
+<p>By default, libsoundio sets this to an empty function in order to silence stdio messages from JACK. You may override the behavior by setting this to <code>NULL</code> or providing your own function. This is registered with JACK regardless of whether <a class="el" href="soundio_8h.html#aaa26217716f3cd99932f988a017c56f1" title="Instead of calling soundio_connect you may call this function to try a specific backend. ">soundio_connect_backend</a> succeeds. </p>
 
 </div>
 </div>
@@ -177,7 +195,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Optional callback. </p>
-<p>Called when the backend disconnects. For example, when the JACK server shuts down. When this happens, listing devices and opening streams will always fail with SoundIoErrorBackendDisconnected. This callback is only called during a call to <a class="el" href="soundio_8h.html#a71dccf3fee95dfe7d776159da912ac72" title="When you call this, the SoundIo::on_devices_change and SoundIo::on_events_signal callbacks might be c...">soundio_flush_events</a> or <a class="el" href="soundio_8h.html#abcf81bd73586c85c0ab2df082f72f20d" title="This function calls soundio_flush_events then blocks until another event is ready or you call soundio...">soundio_wait_events</a>. If you do not supply a callback, the default will crash your program with an error message. </p>
+<p>Called when the backend disconnects. For example, when the JACK server shuts down. When this happens, listing devices and opening streams will always fail with SoundIoErrorBackendDisconnected. This callback is only called during a call to <a class="el" href="soundio_8h.html#a71d0da4c89d66f8115127747086e54d0" title="When you call this, the SoundIo::on_devices_change and SoundIo::on_events_signal callbacks might be c...">soundio_flush_events</a> or <a class="el" href="soundio_8h.html#a08cb0702839f4b416991f52a574ffda9" title="This function calls soundio_flush_events then blocks until another event is ready or you call soundio...">soundio_wait_events</a>. If you do not supply a callback, the default will crash your program with an error message. </p>
 
 </div>
 </div>
@@ -192,7 +210,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Optional callback. </p>
-<p>Called when the list of devices change. Only called during a call to <a class="el" href="soundio_8h.html#a71dccf3fee95dfe7d776159da912ac72" title="When you call this, the SoundIo::on_devices_change and SoundIo::on_events_signal callbacks might be c...">soundio_flush_events</a> or <a class="el" href="soundio_8h.html#abcf81bd73586c85c0ab2df082f72f20d" title="This function calls soundio_flush_events then blocks until another event is ready or you call soundio...">soundio_wait_events</a>. </p>
+<p>Called when the list of devices change. Only called during a call to <a class="el" href="soundio_8h.html#a71d0da4c89d66f8115127747086e54d0" title="When you call this, the SoundIo::on_devices_change and SoundIo::on_events_signal callbacks might be c...">soundio_flush_events</a> or <a class="el" href="soundio_8h.html#a08cb0702839f4b416991f52a574ffda9" title="This function calls soundio_flush_events then blocks until another event is ready or you call soundio...">soundio_wait_events</a>. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a46">sio_list_devices.c</a>.</dd>
 </dl>
 </div>
@@ -208,7 +226,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Optional callback. </p>
-<p>Called from an unknown thread that you should not use to call any soundio functions. You may use this to signal a condition variable to wake up. Called when <a class="el" href="soundio_8h.html#abcf81bd73586c85c0ab2df082f72f20d" title="This function calls soundio_flush_events then blocks until another event is ready or you call soundio...">soundio_wait_events</a> would be woken up. </p>
+<p>Called from an unknown thread that you should not use to call any soundio functions. You may use this to signal a condition variable to wake up. Called when <a class="el" href="soundio_8h.html#a08cb0702839f4b416991f52a574ffda9" title="This function calls soundio_flush_events then blocks until another event is ready or you call soundio...">soundio_wait_events</a> would be woken up. </p>
 
 </div>
 </div>

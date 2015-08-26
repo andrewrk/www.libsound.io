@@ -126,8 +126,8 @@ $(document).ready(function(){initNavTree('sio_sine_8c-example.html','');});
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span> (;;) {</div>
 <div class="line">        <span class="keywordtype">int</span> frame_count = frames_left;</div>
-<div class="line">        <span class="keywordflow">if</span> ((err = <a name="a4"></a><a class="code" href="soundio_8h.html#ae83cf1d60dab49edbd8cb24780978dd8">soundio_outstream_begin_write</a>(outstream, &amp;areas, &amp;frame_count))) {</div>
-<div class="line">            fprintf(stderr, <span class="stringliteral">&quot;%s\n&quot;</span>, <a name="a5"></a><a class="code" href="soundio_8h.html#ae67a82a6ca559c52a1a11a41038dda5d">soundio_strerror</a>(err));</div>
+<div class="line">        <span class="keywordflow">if</span> ((err = <a name="a4"></a><a class="code" href="soundio_8h.html#a20581ecb55ba7c72b9e364b5d616ba5b">soundio_outstream_begin_write</a>(outstream, &amp;areas, &amp;frame_count))) {</div>
+<div class="line">            fprintf(stderr, <span class="stringliteral">&quot;%s\n&quot;</span>, <a name="a5"></a><a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
 <div class="line">            exit(1);</div>
 <div class="line">        }</div>
 <div class="line"></div>
@@ -147,10 +147,10 @@ $(document).ready(function(){initNavTree('sio_sine_8c-example.html','');});
 <div class="line">        }</div>
 <div class="line">        seconds_offset += seconds_per_frame * frame_count;</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> ((err = <a name="a11"></a><a class="code" href="soundio_8h.html#a491c5cbe04691744eb02c474e61feaec">soundio_outstream_end_write</a>(outstream))) {</div>
+<div class="line">        <span class="keywordflow">if</span> ((err = <a name="a11"></a><a class="code" href="soundio_8h.html#ac4222691dfe8360a97f2943eff2128d7">soundio_outstream_end_write</a>(outstream))) {</div>
 <div class="line">            <span class="keywordflow">if</span> (err == <a name="a12"></a><a class="code" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5aaa4e3041da8a28a850c4520989a29ad8">SoundIoErrorUnderflow</a>)</div>
 <div class="line">                <span class="keywordflow">return</span>;</div>
-<div class="line">            fprintf(stderr, <span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="soundio_8h.html#ae67a82a6ca559c52a1a11a41038dda5d">soundio_strerror</a>(err));</div>
+<div class="line">            fprintf(stderr, <span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
 <div class="line">            exit(1);</div>
 <div class="line">        }</div>
 <div class="line"></div>
@@ -210,34 +210,34 @@ $(document).ready(function(){initNavTree('sio_sine_8c-example.html','');});
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keyword">struct </span><a name="_a20"></a><a class="code" href="structSoundIo.html">SoundIo</a> *soundio = <a name="a21"></a><a class="code" href="soundio_8h.html#ac071a701f1a94aea9459da8433a87793">soundio_create</a>();</div>
+<div class="line">    <span class="keyword">struct </span><a name="_a20"></a><a class="code" href="structSoundIo.html">SoundIo</a> *soundio = <a name="a21"></a><a class="code" href="soundio_8h.html#a0a0e1802fefece9761ceed21266ca4f0">soundio_create</a>();</div>
 <div class="line">    <span class="keywordflow">if</span> (!soundio) {</div>
 <div class="line">        fprintf(stderr, <span class="stringliteral">&quot;out of memory\n&quot;</span>);</div>
 <div class="line">        <span class="keywordflow">return</span> 1;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">int</span> err = (backend == <a class="code" href="soundio_8h.html#a27c98a78adca62ed32305d7433e8ca47a095d12ac41162eb63dbea65d7c75de71">SoundIoBackendNone</a>) ?</div>
-<div class="line">        <a name="a22"></a><a class="code" href="soundio_8h.html#af9cb2a86f2779ed84be6af6618cf7c63">soundio_connect</a>(soundio) : <a name="a23"></a><a class="code" href="soundio_8h.html#a397623ded316028fcdc57ed59d5f6815">soundio_connect_backend</a>(soundio, backend);</div>
+<div class="line">        <a name="a22"></a><a class="code" href="soundio_8h.html#abdace6c0ee81959e4284cfc36a5ce66d">soundio_connect</a>(soundio) : <a name="a23"></a><a class="code" href="soundio_8h.html#aaa26217716f3cd99932f988a017c56f1">soundio_connect_backend</a>(soundio, backend);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (err) {</div>
-<div class="line">        fprintf(stderr, <span class="stringliteral">&quot;Unable to connect to backend: %s\n&quot;</span>, <a class="code" href="soundio_8h.html#ae67a82a6ca559c52a1a11a41038dda5d">soundio_strerror</a>(err));</div>
+<div class="line">        fprintf(stderr, <span class="stringliteral">&quot;Unable to connect to backend: %s\n&quot;</span>, <a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
 <div class="line">        <span class="keywordflow">return</span> 1;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <a name="a24"></a><a class="code" href="soundio_8h.html#a71dccf3fee95dfe7d776159da912ac72">soundio_flush_events</a>(soundio);</div>
+<div class="line">    <a name="a24"></a><a class="code" href="soundio_8h.html#a71d0da4c89d66f8115127747086e54d0">soundio_flush_events</a>(soundio);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">int</span> selected_device_index = -1;</div>
 <div class="line">    <span class="keywordflow">if</span> (device_id) {</div>
-<div class="line">        <span class="keywordtype">int</span> device_count = <a name="a25"></a><a class="code" href="soundio_8h.html#a08eea401f8625be5ac457283179b133a">soundio_output_device_count</a>(soundio);</div>
+<div class="line">        <span class="keywordtype">int</span> device_count = <a name="a25"></a><a class="code" href="soundio_8h.html#a4313adae0f0fb126b4c2dd36a4ec76de">soundio_output_device_count</a>(soundio);</div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; device_count; i += 1) {</div>
-<div class="line">            <span class="keyword">struct </span><a name="_a26"></a><a class="code" href="structSoundIoDevice.html">SoundIoDevice</a> *device = <a name="a27"></a><a class="code" href="soundio_8h.html#a7699bf7163aa74f4d52b9a52248f15cd">soundio_get_output_device</a>(soundio, i);</div>
+<div class="line">            <span class="keyword">struct </span><a name="_a26"></a><a class="code" href="structSoundIoDevice.html">SoundIoDevice</a> *device = <a name="a27"></a><a class="code" href="soundio_8h.html#a62b70b821c94272c85d3b7a55ff74ba3">soundio_get_output_device</a>(soundio, i);</div>
 <div class="line">            <span class="keywordflow">if</span> (strcmp(device-&gt;<a name="a28"></a><a class="code" href="structSoundIoDevice.html#a7413ecdfdc99f2b89e60fff87c1f8483">id</a>, device_id) == 0 &amp;&amp; device-&gt;<a name="a29"></a><a class="code" href="structSoundIoDevice.html#afb73b9bd13e98a14a187567f508acebe">is_raw</a> == raw) {</div>
 <div class="line">                selected_device_index = i;</div>
 <div class="line">                <span class="keywordflow">break</span>;</div>
 <div class="line">            }</div>
 <div class="line">        }</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">        selected_device_index = <a name="a30"></a><a class="code" href="soundio_8h.html#aa6ffb2ee7a54af22c5e978299ad29f32">soundio_default_output_device_index</a>(soundio);</div>
+<div class="line">        selected_device_index = <a name="a30"></a><a class="code" href="soundio_8h.html#a934838b4a1056540ec01d6ec9f5764d6">soundio_default_output_device_index</a>(soundio);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (selected_device_index &lt; 0) {</div>
@@ -245,7 +245,7 @@ $(document).ready(function(){initNavTree('sio_sine_8c-example.html','');});
 <div class="line">        <span class="keywordflow">return</span> 1;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keyword">struct </span><a class="code" href="structSoundIoDevice.html">SoundIoDevice</a> *device = <a class="code" href="soundio_8h.html#a7699bf7163aa74f4d52b9a52248f15cd">soundio_get_output_device</a>(soundio, selected_device_index);</div>
+<div class="line">    <span class="keyword">struct </span><a class="code" href="structSoundIoDevice.html">SoundIoDevice</a> *device = <a class="code" href="soundio_8h.html#a62b70b821c94272c85d3b7a55ff74ba3">soundio_get_output_device</a>(soundio, selected_device_index);</div>
 <div class="line">    <span class="keywordflow">if</span> (!device) {</div>
 <div class="line">        fprintf(stderr, <span class="stringliteral">&quot;out of memory\n&quot;</span>);</div>
 <div class="line">        <span class="keywordflow">return</span> 1;</div>
@@ -253,21 +253,26 @@ $(document).ready(function(){initNavTree('sio_sine_8c-example.html','');});
 <div class="line"></div>
 <div class="line">    fprintf(stderr, <span class="stringliteral">&quot;Output device: %s\n&quot;</span>, device-&gt;<a name="a31"></a><a class="code" href="structSoundIoDevice.html#a364b77e81883dc151fce31d2793e80f3">name</a>);</div>
 <div class="line"></div>
-<div class="line">    <span class="keyword">struct </span><a class="code" href="structSoundIoOutStream.html">SoundIoOutStream</a> *outstream = <a name="a32"></a><a class="code" href="soundio_8h.html#a6c1ae309852e0b7c05407e3fdc30f3bd">soundio_outstream_create</a>(device);</div>
-<div class="line">    outstream-&gt;<a class="code" href="structSoundIoOutStream.html#a9b6634417ccaec9b5c4376728efb186d">write_callback</a> = <a class="code" href="structSoundIoOutStream.html#a9b6634417ccaec9b5c4376728efb186d">write_callback</a>;</div>
-<div class="line">    outstream-&gt;<a name="a33"></a><a class="code" href="structSoundIoOutStream.html#ae00fe63a46a0fe106430692f75337e34">underflow_callback</a> = <a class="code" href="structSoundIoOutStream.html#ae00fe63a46a0fe106430692f75337e34">underflow_callback</a>;</div>
-<div class="line">    outstream-&gt;<a name="a34"></a><a class="code" href="structSoundIoOutStream.html#a3e3f869a0af4ef1914a864c93ce8d3c2">name</a> = stream_name;</div>
+<div class="line">    <span class="keywordflow">if</span> (device-&gt;<a name="a32"></a><a class="code" href="structSoundIoDevice.html#a129f523c7d43096985c058bc67fe3b6c">probe_error</a>) {</div>
+<div class="line">        fprintf(stderr, <span class="stringliteral">&quot;Cannot probe device: %s\n&quot;</span>, <a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(device-&gt;<a class="code" href="structSoundIoDevice.html#a129f523c7d43096985c058bc67fe3b6c">probe_error</a>));</div>
+<div class="line">        <span class="keywordflow">return</span> 1;</div>
+<div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (<a name="a35"></a><a class="code" href="soundio_8h.html#a07216f7665c1116578687bde109c72b5">soundio_device_supports_format</a>(device, <a name="a36"></a><a class="code" href="soundio_8h.html#a030eb3a5e02ada7c03f6d16528ce9b3a">SoundIoFormatFloat32NE</a>)) {</div>
-<div class="line">        outstream-&gt;<a name="a37"></a><a class="code" href="structSoundIoOutStream.html#a164722836745394086aefb53f0a0c5c8">format</a> = <a class="code" href="soundio_8h.html#a030eb3a5e02ada7c03f6d16528ce9b3a">SoundIoFormatFloat32NE</a>;</div>
+<div class="line">    <span class="keyword">struct </span><a class="code" href="structSoundIoOutStream.html">SoundIoOutStream</a> *outstream = <a name="a33"></a><a class="code" href="soundio_8h.html#a6bea3bceca0c3aafa940ae1a224573bb">soundio_outstream_create</a>(device);</div>
+<div class="line">    outstream-&gt;<a class="code" href="structSoundIoOutStream.html#a9b6634417ccaec9b5c4376728efb186d">write_callback</a> = <a class="code" href="structSoundIoOutStream.html#a9b6634417ccaec9b5c4376728efb186d">write_callback</a>;</div>
+<div class="line">    outstream-&gt;<a name="a34"></a><a class="code" href="structSoundIoOutStream.html#ae00fe63a46a0fe106430692f75337e34">underflow_callback</a> = <a class="code" href="structSoundIoOutStream.html#ae00fe63a46a0fe106430692f75337e34">underflow_callback</a>;</div>
+<div class="line">    outstream-&gt;<a name="a35"></a><a class="code" href="structSoundIoOutStream.html#a3e3f869a0af4ef1914a864c93ce8d3c2">name</a> = stream_name;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a name="a36"></a><a class="code" href="soundio_8h.html#a4d8160fcd03e4366a4912279b5e60f04">soundio_device_supports_format</a>(device, <a name="a37"></a><a class="code" href="soundio_8h.html#a030eb3a5e02ada7c03f6d16528ce9b3a">SoundIoFormatFloat32NE</a>)) {</div>
+<div class="line">        outstream-&gt;<a name="a38"></a><a class="code" href="structSoundIoOutStream.html#a164722836745394086aefb53f0a0c5c8">format</a> = <a class="code" href="soundio_8h.html#a030eb3a5e02ada7c03f6d16528ce9b3a">SoundIoFormatFloat32NE</a>;</div>
 <div class="line">        write_sample = write_sample_float32ne;</div>
-<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="soundio_8h.html#a07216f7665c1116578687bde109c72b5">soundio_device_supports_format</a>(device, <a name="a38"></a><a class="code" href="soundio_8h.html#a14dc622cc9c2fc55590c2338e1aa9229">SoundIoFormatFloat64NE</a>)) {</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="soundio_8h.html#a4d8160fcd03e4366a4912279b5e60f04">soundio_device_supports_format</a>(device, <a name="a39"></a><a class="code" href="soundio_8h.html#a14dc622cc9c2fc55590c2338e1aa9229">SoundIoFormatFloat64NE</a>)) {</div>
 <div class="line">        outstream-&gt;<a class="code" href="structSoundIoOutStream.html#a164722836745394086aefb53f0a0c5c8">format</a> = <a class="code" href="soundio_8h.html#a14dc622cc9c2fc55590c2338e1aa9229">SoundIoFormatFloat64NE</a>;</div>
 <div class="line">        write_sample = write_sample_float64ne;</div>
-<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="soundio_8h.html#a07216f7665c1116578687bde109c72b5">soundio_device_supports_format</a>(device, <a name="a39"></a><a class="code" href="soundio_8h.html#a12f58d8450a626d7d0315e23570b631a">SoundIoFormatS32NE</a>)) {</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="soundio_8h.html#a4d8160fcd03e4366a4912279b5e60f04">soundio_device_supports_format</a>(device, <a name="a40"></a><a class="code" href="soundio_8h.html#a12f58d8450a626d7d0315e23570b631a">SoundIoFormatS32NE</a>)) {</div>
 <div class="line">        outstream-&gt;<a class="code" href="structSoundIoOutStream.html#a164722836745394086aefb53f0a0c5c8">format</a> = <a class="code" href="soundio_8h.html#a12f58d8450a626d7d0315e23570b631a">SoundIoFormatS32NE</a>;</div>
 <div class="line">        write_sample = write_sample_s32ne;</div>
-<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="soundio_8h.html#a07216f7665c1116578687bde109c72b5">soundio_device_supports_format</a>(device, <a name="a40"></a><a class="code" href="soundio_8h.html#a240ac7e5146b761c72789acaa8ea1acb">SoundIoFormatS16NE</a>)) {</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="soundio_8h.html#a4d8160fcd03e4366a4912279b5e60f04">soundio_device_supports_format</a>(device, <a name="a41"></a><a class="code" href="soundio_8h.html#a240ac7e5146b761c72789acaa8ea1acb">SoundIoFormatS16NE</a>)) {</div>
 <div class="line">        outstream-&gt;<a class="code" href="structSoundIoOutStream.html#a164722836745394086aefb53f0a0c5c8">format</a> = <a class="code" href="soundio_8h.html#a240ac7e5146b761c72789acaa8ea1acb">SoundIoFormatS16NE</a>;</div>
 <div class="line">        write_sample = write_sample_s16ne;</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
@@ -275,26 +280,26 @@ $(document).ready(function(){initNavTree('sio_sine_8c-example.html','');});
 <div class="line">        <span class="keywordflow">return</span> 1;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> ((err = <a name="a41"></a><a class="code" href="soundio_8h.html#ae05453eeba3fb87493110e3f413f3683">soundio_outstream_open</a>(outstream))) {</div>
-<div class="line">        fprintf(stderr, <span class="stringliteral">&quot;unable to open device: %s&quot;</span>, <a class="code" href="soundio_8h.html#ae67a82a6ca559c52a1a11a41038dda5d">soundio_strerror</a>(err));</div>
+<div class="line">    <span class="keywordflow">if</span> ((err = <a name="a42"></a><a class="code" href="soundio_8h.html#a67cb9152f3a450f9aa43e4896e83e307">soundio_outstream_open</a>(outstream))) {</div>
+<div class="line">        fprintf(stderr, <span class="stringliteral">&quot;unable to open device: %s&quot;</span>, <a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
 <div class="line">        <span class="keywordflow">return</span> 1;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> (outstream-&gt;<a name="a42"></a><a class="code" href="structSoundIoOutStream.html#a1e8831ac68aab9bd3a411a758b096bff">layout_error</a>)</div>
-<div class="line">        fprintf(stderr, <span class="stringliteral">&quot;unable to set channel layout: %s\n&quot;</span>, <a class="code" href="soundio_8h.html#ae67a82a6ca559c52a1a11a41038dda5d">soundio_strerror</a>(outstream-&gt;<a class="code" href="structSoundIoOutStream.html#a1e8831ac68aab9bd3a411a758b096bff">layout_error</a>));</div>
+<div class="line">    <span class="keywordflow">if</span> (outstream-&gt;<a name="a43"></a><a class="code" href="structSoundIoOutStream.html#a1e8831ac68aab9bd3a411a758b096bff">layout_error</a>)</div>
+<div class="line">        fprintf(stderr, <span class="stringliteral">&quot;unable to set channel layout: %s\n&quot;</span>, <a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(outstream-&gt;<a class="code" href="structSoundIoOutStream.html#a1e8831ac68aab9bd3a411a758b096bff">layout_error</a>));</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> ((err = <a name="a43"></a><a class="code" href="soundio_8h.html#a07ec2e1d3bf99b37bbe59476d29d12f0">soundio_outstream_start</a>(outstream))) {</div>
-<div class="line">        fprintf(stderr, <span class="stringliteral">&quot;unable to start device: %s\n&quot;</span>, <a class="code" href="soundio_8h.html#ae67a82a6ca559c52a1a11a41038dda5d">soundio_strerror</a>(err));</div>
+<div class="line">    <span class="keywordflow">if</span> ((err = <a name="a44"></a><a class="code" href="soundio_8h.html#aa62e51d08df9e6c9f4670ba5c5524ef3">soundio_outstream_start</a>(outstream))) {</div>
+<div class="line">        fprintf(stderr, <span class="stringliteral">&quot;unable to start device: %s\n&quot;</span>, <a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
 <div class="line">        <span class="keywordflow">return</span> 1;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span> (;;)</div>
-<div class="line">        <a name="a44"></a><a class="code" href="soundio_8h.html#abcf81bd73586c85c0ab2df082f72f20d">soundio_wait_events</a>(soundio);</div>
+<div class="line">        <a name="a45"></a><a class="code" href="soundio_8h.html#a08cb0702839f4b416991f52a574ffda9">soundio_wait_events</a>(soundio);</div>
 <div class="line"></div>
-<div class="line">    <a name="a45"></a><a class="code" href="soundio_8h.html#a59eece69af40135fd566ee832e276329">soundio_outstream_destroy</a>(outstream);</div>
-<div class="line">    <a name="a46"></a><a class="code" href="soundio_8h.html#a1d86a13ad4ea8425492973eec11c540a">soundio_device_unref</a>(device);</div>
-<div class="line">    <a name="a47"></a><a class="code" href="soundio_8h.html#a19e112a26941a5a02da3e0f7f90efd2f">soundio_destroy</a>(soundio);</div>
+<div class="line">    <a name="a46"></a><a class="code" href="soundio_8h.html#a80d9cc2dbc5178cbe9ae7b578f3c23d7">soundio_outstream_destroy</a>(outstream);</div>
+<div class="line">    <a name="a47"></a><a class="code" href="soundio_8h.html#a4bd2a0c66f5f5d6427a9d246e0d8243a">soundio_device_unref</a>(device);</div>
+<div class="line">    <a name="a48"></a><a class="code" href="soundio_8h.html#a4d24b521da70ffa55192036956638e9c">soundio_destroy</a>(soundio);</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->

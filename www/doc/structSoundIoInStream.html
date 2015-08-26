@@ -78,7 +78,7 @@ $(document).ready(function(){initNavTree('structSoundIoInStream.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a8a5c727f8bd0cbf61acfe5cd5307a0f2"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structSoundIoDevice.html">SoundIoDevice</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSoundIoInStream.html#a8a5c727f8bd0cbf61acfe5cd5307a0f2">device</a></td></tr>
-<tr class="memdesc:a8a5c727f8bd0cbf61acfe5cd5307a0f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populated automatically when you call <a class="el" href="soundio_8h.html#a6c1ae309852e0b7c05407e3fdc30f3bd" title="Allocates memory and sets defaults. ">soundio_outstream_create</a>.  <a href="#a8a5c727f8bd0cbf61acfe5cd5307a0f2">More...</a><br/></td></tr>
+<tr class="memdesc:a8a5c727f8bd0cbf61acfe5cd5307a0f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populated automatically when you call <a class="el" href="soundio_8h.html#a6bea3bceca0c3aafa940ae1a224573bb" title="Allocates memory and sets defaults. ">soundio_outstream_create</a>.  <a href="#a8a5c727f8bd0cbf61acfe5cd5307a0f2">More...</a><br/></td></tr>
 <tr class="separator:a8a5c727f8bd0cbf61acfe5cd5307a0f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a884ee9d40594e4a07338fe77e616c3ff"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="soundio_8h.html#aef491940cf81c91cf8ce15783a294af0">SoundIoFormat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSoundIoInStream.html#a884ee9d40594e4a07338fe77e616c3ff">format</a></td></tr>
 <tr class="memdesc:a884ee9d40594e4a07338fe77e616c3ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defaults to SoundIoFormatFloat32NE, followed by the first one supported.  <a href="#a884ee9d40594e4a07338fe77e616c3ff">More...</a><br/></td></tr>
@@ -96,7 +96,7 @@ Data Fields</h2></td></tr>
 <tr class="memdesc:ae6119897a47a4ee252bd971d346d0c1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defaults to NULL. Put whatever you want here.  <a href="#ae6119897a47a4ee252bd971d346d0c1d">More...</a><br/></td></tr>
 <tr class="separator:ae6119897a47a4ee252bd971d346d0c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecda2dbb80f79bee8f906c88fd6c00d9"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSoundIoInStream.html#aecda2dbb80f79bee8f906c88fd6c00d9">read_callback</a> )(struct <a class="el" href="structSoundIoInStream.html">SoundIoInStream</a> *, int frame_count_min, int frame_count_max)</td></tr>
-<tr class="memdesc:aecda2dbb80f79bee8f906c88fd6c00d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">In this function call <a class="el" href="soundio_8h.html#a3d98e27416a9e083c3c60af488521dae" title="Call this function when you are ready to begin reading from the device buffer. ">soundio_instream_begin_read</a> and <a class="el" href="soundio_8h.html#a21482f18e00a3668b730a5ffbe27326f" title="This will drop all of the frames from when you called soundio_instream_begin_read. ">soundio_instream_end_read</a> as many times as necessary to read at minimum <code>frame_count_min</code> frames and at maximum <code>frame_count_max</code> frames.  <a href="#aecda2dbb80f79bee8f906c88fd6c00d9">More...</a><br/></td></tr>
+<tr class="memdesc:aecda2dbb80f79bee8f906c88fd6c00d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">In this function call <a class="el" href="soundio_8h.html#a519ae0d334e2a09f060ec2288c0a3c1d" title="Call this function when you are ready to begin reading from the device buffer. ">soundio_instream_begin_read</a> and <a class="el" href="soundio_8h.html#a83cbd9dd915dcef4be97ce789abc17fe" title="This will drop all of the frames from when you called soundio_instream_begin_read. ">soundio_instream_end_read</a> as many times as necessary to read at minimum <code>frame_count_min</code> frames and at maximum <code>frame_count_max</code> frames.  <a href="#aecda2dbb80f79bee8f906c88fd6c00d9">More...</a><br/></td></tr>
 <tr class="separator:aecda2dbb80f79bee8f906c88fd6c00d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3114c2714379ba9e2b972129a82069e0"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSoundIoInStream.html#a3114c2714379ba9e2b972129a82069e0">error_callback</a> )(struct <a class="el" href="structSoundIoInStream.html">SoundIoInStream</a> *, int err)</td></tr>
 <tr class="memdesc:a3114c2714379ba9e2b972129a82069e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional callback.  <a href="#a3114c2714379ba9e2b972129a82069e0">More...</a><br/></td></tr>
@@ -108,10 +108,10 @@ Data Fields</h2></td></tr>
 <tr class="memdesc:aff49aedaf4f8cb04360dd5f0273e2a5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional: Hint that this input stream is nonterminal.  <a href="#aff49aedaf4f8cb04360dd5f0273e2a5d">More...</a><br/></td></tr>
 <tr class="separator:aff49aedaf4f8cb04360dd5f0273e2a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85a89a99de54b05975350a7436e443bd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSoundIoInStream.html#a85a89a99de54b05975350a7436e443bd">bytes_per_frame</a></td></tr>
-<tr class="memdesc:a85a89a99de54b05975350a7436e443bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">computed automatically when you call <a class="el" href="soundio_8h.html#a9a50e1d8aab9181106ee8bb578140c28" title="After you call this function, SoundIoInStream::software_latency is set to the correct value...">soundio_instream_open</a>  <a href="#a85a89a99de54b05975350a7436e443bd">More...</a><br/></td></tr>
+<tr class="memdesc:a85a89a99de54b05975350a7436e443bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">computed automatically when you call <a class="el" href="soundio_8h.html#a8ecf120bc886f31ee2642284dd0dbd81" title="After you call this function, SoundIoInStream::software_latency is set to the correct value...">soundio_instream_open</a>  <a href="#a85a89a99de54b05975350a7436e443bd">More...</a><br/></td></tr>
 <tr class="separator:a85a89a99de54b05975350a7436e443bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0a93d675fe2061e6502880724535f64"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSoundIoInStream.html#ad0a93d675fe2061e6502880724535f64">bytes_per_sample</a></td></tr>
-<tr class="memdesc:ad0a93d675fe2061e6502880724535f64"><td class="mdescLeft">&#160;</td><td class="mdescRight">computed automatically when you call <a class="el" href="soundio_8h.html#a9a50e1d8aab9181106ee8bb578140c28" title="After you call this function, SoundIoInStream::software_latency is set to the correct value...">soundio_instream_open</a>  <a href="#ad0a93d675fe2061e6502880724535f64">More...</a><br/></td></tr>
+<tr class="memdesc:ad0a93d675fe2061e6502880724535f64"><td class="mdescLeft">&#160;</td><td class="mdescRight">computed automatically when you call <a class="el" href="soundio_8h.html#a8ecf120bc886f31ee2642284dd0dbd81" title="After you call this function, SoundIoInStream::software_latency is set to the correct value...">soundio_instream_open</a>  <a href="#ad0a93d675fe2061e6502880724535f64">More...</a><br/></td></tr>
 <tr class="separator:ad0a93d675fe2061e6502880724535f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a9eb335cdc4f9dc527076d3b7cc1fae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSoundIoInStream.html#a8a9eb335cdc4f9dc527076d3b7cc1fae">layout_error</a></td></tr>
 <tr class="memdesc:a8a9eb335cdc4f9dc527076d3b7cc1fae"><td class="mdescLeft">&#160;</td><td class="mdescRight">If setting the channel layout fails for some reason, this field is set to an error code.  <a href="#a8a9eb335cdc4f9dc527076d3b7cc1fae">More...</a><br/></td></tr>
@@ -131,7 +131,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>computed automatically when you call <a class="el" href="soundio_8h.html#a9a50e1d8aab9181106ee8bb578140c28" title="After you call this function, SoundIoInStream::software_latency is set to the correct value...">soundio_instream_open</a> </p>
+<p>computed automatically when you call <a class="el" href="soundio_8h.html#a8ecf120bc886f31ee2642284dd0dbd81" title="After you call this function, SoundIoInStream::software_latency is set to the correct value...">soundio_instream_open</a> </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a23">sio_microphone.c</a>.</dd>
 </dl>
 </div>
@@ -146,7 +146,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>computed automatically when you call <a class="el" href="soundio_8h.html#a9a50e1d8aab9181106ee8bb578140c28" title="After you call this function, SoundIoInStream::software_latency is set to the correct value...">soundio_instream_open</a> </p>
+<p>computed automatically when you call <a class="el" href="soundio_8h.html#a8ecf120bc886f31ee2642284dd0dbd81" title="After you call this function, SoundIoInStream::software_latency is set to the correct value...">soundio_instream_open</a> </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a29">sio_microphone.c</a>.</dd>
 </dl>
 </div>
@@ -161,7 +161,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Populated automatically when you call <a class="el" href="soundio_8h.html#a6c1ae309852e0b7c05407e3fdc30f3bd" title="Allocates memory and sets defaults. ">soundio_outstream_create</a>. </p>
+<p>Populated automatically when you call <a class="el" href="soundio_8h.html#a6bea3bceca0c3aafa940ae1a224573bb" title="Allocates memory and sets defaults. ">soundio_outstream_create</a>. </p>
 
 </div>
 </div>
@@ -221,7 +221,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>If setting the channel layout fails for some reason, this field is set to an error code. </p>
-<p>Possible error codes are: <a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a9923804fb92399924aeb192157766845">SoundIoErrorIncompatibleDevice</a> </p>
+<p>Possible error codes are: <a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a9923804fb92399924aeb192157766845" title="Attempted to use a device with parameters it cannot support. ">SoundIoErrorIncompatibleDevice</a> </p>
 
 </div>
 </div>
@@ -265,7 +265,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>In this function call <a class="el" href="soundio_8h.html#a3d98e27416a9e083c3c60af488521dae" title="Call this function when you are ready to begin reading from the device buffer. ">soundio_instream_begin_read</a> and <a class="el" href="soundio_8h.html#a21482f18e00a3668b730a5ffbe27326f" title="This will drop all of the frames from when you called soundio_instream_begin_read. ">soundio_instream_end_read</a> as many times as necessary to read at minimum <code>frame_count_min</code> frames and at maximum <code>frame_count_max</code> frames. </p>
+<p>In this function call <a class="el" href="soundio_8h.html#a519ae0d334e2a09f060ec2288c0a3c1d" title="Call this function when you are ready to begin reading from the device buffer. ">soundio_instream_begin_read</a> and <a class="el" href="soundio_8h.html#a83cbd9dd915dcef4be97ce789abc17fe" title="This will drop all of the frames from when you called soundio_instream_begin_read. ">soundio_instream_end_read</a> as many times as necessary to read at minimum <code>frame_count_min</code> frames and at maximum <code>frame_count_max</code> frames. </p>
 <p>If you return from read_callback without having read <code>frame_count_min</code>, the frames will be dropped. <code>frame_count_max</code> is how many frames are available to read. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a76">sio_microphone.c</a>.</dd>
 </dl>
@@ -298,7 +298,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Ignoring hardware latency, this is the number of seconds it takes for a captured sample to become available for reading. </p>
-<p>After you call <a class="el" href="soundio_8h.html#a9a50e1d8aab9181106ee8bb578140c28" title="After you call this function, SoundIoInStream::software_latency is set to the correct value...">soundio_instream_open</a>, this value is replaced with the actual software latency, as near to this value as possible. A higher value means less CPU usage. Defaults to a large value, potentially upwards of 2 seconds. If the device has unknown software latency min and max values, you may still set this, but you might not get the value you requested. For PulseAudio, if you set this value to non-default, it sets <code>PA_STREAM_ADJUST_LATENCY</code> and is the value used for <code>fragsize</code>. For JACK, this value is always equal to <code>software_latency_current</code> of the device. </p>
+<p>After you call <a class="el" href="soundio_8h.html#a8ecf120bc886f31ee2642284dd0dbd81" title="After you call this function, SoundIoInStream::software_latency is set to the correct value...">soundio_instream_open</a>, this value is replaced with the actual software latency, as near to this value as possible. A higher value means less CPU usage. Defaults to a large value, potentially upwards of 2 seconds. If the device has unknown software latency min and max values, you may still set this, but you might not get the value you requested. For PulseAudio, if you set this value to non-default, it sets <code>PA_STREAM_ADJUST_LATENCY</code> and is the value used for <code>fragsize</code>. For JACK, this value is always equal to <code>software_latency_current</code> of the device. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a75">sio_microphone.c</a>.</dd>
 </dl>
 </div>

@@ -132,8 +132,8 @@ $(document).ready(function(){initNavTree('sio_microphone_8c-example.html','');})
 <div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> read_callback(<span class="keyword">struct</span> <a name="_a19"></a><a class="code" href="structSoundIoInStream.html">SoundIoInStream</a> *instream, <span class="keywordtype">int</span> frame_count_min, <span class="keywordtype">int</span> frame_count_max) {</div>
 <div class="line">    <span class="keyword">struct </span><a name="_a20"></a><a class="code" href="structSoundIoChannelArea.html">SoundIoChannelArea</a> *areas;</div>
 <div class="line">    <span class="keywordtype">int</span> err;</div>
-<div class="line">    <span class="keywordtype">char</span> *write_ptr = <a name="a21"></a><a class="code" href="soundio_8h.html#ade966416b1d525504e8dc5235bf216f8">soundio_ring_buffer_write_ptr</a>(ring_buffer);</div>
-<div class="line">    <span class="keywordtype">int</span> free_bytes = <a name="a22"></a><a class="code" href="soundio_8h.html#a5c7a4b94b8fa7724d0ca348d5d038848">soundio_ring_buffer_free_count</a>(ring_buffer);</div>
+<div class="line">    <span class="keywordtype">char</span> *write_ptr = <a name="a21"></a><a class="code" href="soundio_8h.html#a1ef789a8686ff3ec30758f96b19874ae">soundio_ring_buffer_write_ptr</a>(ring_buffer);</div>
+<div class="line">    <span class="keywordtype">int</span> free_bytes = <a name="a22"></a><a class="code" href="soundio_8h.html#ac5d8727dc5dea01ced41d804e1cf93f1">soundio_ring_buffer_free_count</a>(ring_buffer);</div>
 <div class="line">    <span class="keywordtype">int</span> free_count = free_bytes / instream-&gt;<a name="a23"></a><a class="code" href="structSoundIoInStream.html#a85a89a99de54b05975350a7436e443bd">bytes_per_frame</a>;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (frame_count_min &gt; free_count)</div>
@@ -145,8 +145,8 @@ $(document).ready(function(){initNavTree('sio_microphone_8c-example.html','');})
 <div class="line">    <span class="keywordflow">for</span> (;;) {</div>
 <div class="line">        <span class="keywordtype">int</span> frame_count = frames_left;</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> ((err = <a name="a24"></a><a class="code" href="soundio_8h.html#a3d98e27416a9e083c3c60af488521dae">soundio_instream_begin_read</a>(instream, &amp;areas, &amp;frame_count)))</div>
-<div class="line">            panic(<span class="stringliteral">&quot;begin read error: %s&quot;</span>, <a name="a25"></a><a class="code" href="soundio_8h.html#ae67a82a6ca559c52a1a11a41038dda5d">soundio_strerror</a>(err));</div>
+<div class="line">        <span class="keywordflow">if</span> ((err = <a name="a24"></a><a class="code" href="soundio_8h.html#a519ae0d334e2a09f060ec2288c0a3c1d">soundio_instream_begin_read</a>(instream, &amp;areas, &amp;frame_count)))</div>
+<div class="line">            panic(<span class="stringliteral">&quot;begin read error: %s&quot;</span>, <a name="a25"></a><a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (!frame_count)</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
@@ -166,8 +166,8 @@ $(document).ready(function(){initNavTree('sio_microphone_8c-example.html','');})
 <div class="line">            }</div>
 <div class="line">        }</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> ((err = <a name="a31"></a><a class="code" href="soundio_8h.html#a21482f18e00a3668b730a5ffbe27326f">soundio_instream_end_read</a>(instream)))</div>
-<div class="line">            panic(<span class="stringliteral">&quot;end read error: %s&quot;</span>, <a class="code" href="soundio_8h.html#ae67a82a6ca559c52a1a11a41038dda5d">soundio_strerror</a>(err));</div>
+<div class="line">        <span class="keywordflow">if</span> ((err = <a name="a31"></a><a class="code" href="soundio_8h.html#a83cbd9dd915dcef4be97ce789abc17fe">soundio_instream_end_read</a>(instream)))</div>
+<div class="line">            panic(<span class="stringliteral">&quot;end read error: %s&quot;</span>, <a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
 <div class="line"></div>
 <div class="line">        frames_left -= frame_count;</div>
 <div class="line">        <span class="keywordflow">if</span> (frames_left &lt;= 0)</div>
@@ -175,7 +175,7 @@ $(document).ready(function(){initNavTree('sio_microphone_8c-example.html','');})
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">int</span> advance_bytes = write_frames * instream-&gt;<a class="code" href="structSoundIoInStream.html#a85a89a99de54b05975350a7436e443bd">bytes_per_frame</a>;</div>
-<div class="line">    <a name="a32"></a><a class="code" href="soundio_8h.html#ad09e77324eb74d30894dd05fccf7e67b">soundio_ring_buffer_advance_write_ptr</a>(ring_buffer, advance_bytes);</div>
+<div class="line">    <a name="a32"></a><a class="code" href="soundio_8h.html#af629cd68ecf14004fd5321c57f92cfc6">soundio_ring_buffer_advance_write_ptr</a>(ring_buffer, advance_bytes);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> write_callback(<span class="keyword">struct</span> <a name="_a33"></a><a class="code" href="structSoundIoOutStream.html">SoundIoOutStream</a> *outstream, <span class="keywordtype">int</span> frame_count_min, <span class="keywordtype">int</span> frame_count_max) {</div>
@@ -183,15 +183,15 @@ $(document).ready(function(){initNavTree('sio_microphone_8c-example.html','');})
 <div class="line">    <span class="keywordtype">int</span> frame_count;</div>
 <div class="line">    <span class="keywordtype">int</span> err;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordtype">char</span> *read_ptr = <a name="a34"></a><a class="code" href="soundio_8h.html#a5d5a321c3e2114fd41b18ac6fd73a1ee">soundio_ring_buffer_read_ptr</a>(ring_buffer);</div>
-<div class="line">    <span class="keywordtype">int</span> fill_bytes = <a name="a35"></a><a class="code" href="soundio_8h.html#af94c8b0ca6b30c00e2ac5f58a78e9b0a">soundio_ring_buffer_fill_count</a>(ring_buffer);</div>
+<div class="line">    <span class="keywordtype">char</span> *read_ptr = <a name="a34"></a><a class="code" href="soundio_8h.html#a01ae9f776e0e372a7bdfe07f781af126">soundio_ring_buffer_read_ptr</a>(ring_buffer);</div>
+<div class="line">    <span class="keywordtype">int</span> fill_bytes = <a name="a35"></a><a class="code" href="soundio_8h.html#a4957958a103d47ee5196047517bfd9bf">soundio_ring_buffer_fill_count</a>(ring_buffer);</div>
 <div class="line">    <span class="keywordtype">int</span> fill_count = fill_bytes / outstream-&gt;<a name="a36"></a><a class="code" href="structSoundIoOutStream.html#a799cd8220282eee3d21b6a0511e9533a">bytes_per_frame</a>;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (frame_count_min &gt; fill_count) {</div>
 <div class="line">        <span class="comment">// Ring buffer does not have enough data, fill with zeroes.</span></div>
 <div class="line">        <span class="keywordflow">for</span> (;;) {</div>
-<div class="line">            <span class="keywordflow">if</span> ((err = <a name="a37"></a><a class="code" href="soundio_8h.html#ae83cf1d60dab49edbd8cb24780978dd8">soundio_outstream_begin_write</a>(outstream, &amp;areas, &amp;frame_count)))</div>
-<div class="line">                panic(<span class="stringliteral">&quot;begin write error: %s&quot;</span>, <a class="code" href="soundio_8h.html#ae67a82a6ca559c52a1a11a41038dda5d">soundio_strerror</a>(err));</div>
+<div class="line">            <span class="keywordflow">if</span> ((err = <a name="a37"></a><a class="code" href="soundio_8h.html#a20581ecb55ba7c72b9e364b5d616ba5b">soundio_outstream_begin_write</a>(outstream, &amp;areas, &amp;frame_count)))</div>
+<div class="line">                panic(<span class="stringliteral">&quot;begin write error: %s&quot;</span>, <a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
 <div class="line">            <span class="keywordflow">if</span> (frame_count &lt;= 0)</div>
 <div class="line">                <span class="keywordflow">return</span>;</div>
 <div class="line">            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> frame = 0; frame &lt; frame_count; frame += 1) {</div>
@@ -200,8 +200,8 @@ $(document).ready(function(){initNavTree('sio_microphone_8c-example.html','');})
 <div class="line">                    areas[ch].<a class="code" href="structSoundIoChannelArea.html#a153e9f7fa5412b37cd55331c2d6387e6">ptr</a> += areas[ch].<a class="code" href="structSoundIoChannelArea.html#ae63a7441a09315f433662b0113e5b52e">step</a>;</div>
 <div class="line">                }</div>
 <div class="line">            }</div>
-<div class="line">            <span class="keywordflow">if</span> ((err = <a name="a40"></a><a class="code" href="soundio_8h.html#a491c5cbe04691744eb02c474e61feaec">soundio_outstream_end_write</a>(outstream)))</div>
-<div class="line">                panic(<span class="stringliteral">&quot;end write error: %s&quot;</span>, <a class="code" href="soundio_8h.html#ae67a82a6ca559c52a1a11a41038dda5d">soundio_strerror</a>(err));</div>
+<div class="line">            <span class="keywordflow">if</span> ((err = <a name="a40"></a><a class="code" href="soundio_8h.html#ac4222691dfe8360a97f2943eff2128d7">soundio_outstream_end_write</a>(outstream)))</div>
+<div class="line">                panic(<span class="stringliteral">&quot;end write error: %s&quot;</span>, <a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -211,8 +211,8 @@ $(document).ready(function(){initNavTree('sio_microphone_8c-example.html','');})
 <div class="line">    <span class="keywordflow">while</span> (frames_left &gt; 0) {</div>
 <div class="line">        <span class="keywordtype">int</span> frame_count = frames_left;</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> ((err = <a class="code" href="soundio_8h.html#ae83cf1d60dab49edbd8cb24780978dd8">soundio_outstream_begin_write</a>(outstream, &amp;areas, &amp;frame_count)))</div>
-<div class="line">            panic(<span class="stringliteral">&quot;begin write error: %s&quot;</span>, <a class="code" href="soundio_8h.html#ae67a82a6ca559c52a1a11a41038dda5d">soundio_strerror</a>(err));</div>
+<div class="line">        <span class="keywordflow">if</span> ((err = <a class="code" href="soundio_8h.html#a20581ecb55ba7c72b9e364b5d616ba5b">soundio_outstream_begin_write</a>(outstream, &amp;areas, &amp;frame_count)))</div>
+<div class="line">            panic(<span class="stringliteral">&quot;begin write error: %s&quot;</span>, <a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (frame_count &lt;= 0)</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
@@ -225,13 +225,13 @@ $(document).ready(function(){initNavTree('sio_microphone_8c-example.html','');})
 <div class="line">            }</div>
 <div class="line">        }</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> ((err = <a class="code" href="soundio_8h.html#a491c5cbe04691744eb02c474e61feaec">soundio_outstream_end_write</a>(outstream)))</div>
-<div class="line">            panic(<span class="stringliteral">&quot;end write error: %s&quot;</span>, <a class="code" href="soundio_8h.html#ae67a82a6ca559c52a1a11a41038dda5d">soundio_strerror</a>(err));</div>
+<div class="line">        <span class="keywordflow">if</span> ((err = <a class="code" href="soundio_8h.html#ac4222691dfe8360a97f2943eff2128d7">soundio_outstream_end_write</a>(outstream)))</div>
+<div class="line">            panic(<span class="stringliteral">&quot;end write error: %s&quot;</span>, <a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
 <div class="line"></div>
 <div class="line">        frames_left -= frame_count;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <a name="a41"></a><a class="code" href="soundio_8h.html#a75666ac95ac810577b5210b13f40ded1">soundio_ring_buffer_advance_read_ptr</a>(ring_buffer, read_count * outstream-&gt;<a class="code" href="structSoundIoOutStream.html#a799cd8220282eee3d21b6a0511e9533a">bytes_per_frame</a>);</div>
+<div class="line">    <a name="a41"></a><a class="code" href="soundio_8h.html#a544a9a3791d3be76c8d6c39d6d4e9ac1">soundio_ring_buffer_advance_read_ptr</a>(ring_buffer, read_count * outstream-&gt;<a class="code" href="structSoundIoOutStream.html#a799cd8220282eee3d21b6a0511e9533a">bytes_per_frame</a>);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> underflow_callback(<span class="keyword">struct</span> <a class="code" href="structSoundIoOutStream.html">SoundIoOutStream</a> *outstream) {</div>
@@ -295,37 +295,37 @@ $(document).ready(function(){initNavTree('sio_microphone_8c-example.html','');})
 <div class="line">            <span class="keywordflow">return</span> usage(exe);</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keyword">struct </span><a name="_a49"></a><a class="code" href="structSoundIo.html">SoundIo</a> *soundio = <a name="a50"></a><a class="code" href="soundio_8h.html#ac071a701f1a94aea9459da8433a87793">soundio_create</a>();</div>
+<div class="line">    <span class="keyword">struct </span><a name="_a49"></a><a class="code" href="structSoundIo.html">SoundIo</a> *soundio = <a name="a50"></a><a class="code" href="soundio_8h.html#a0a0e1802fefece9761ceed21266ca4f0">soundio_create</a>();</div>
 <div class="line">    <span class="keywordflow">if</span> (!soundio)</div>
 <div class="line">        panic(<span class="stringliteral">&quot;out of memory&quot;</span>);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">int</span> err = (backend == <a class="code" href="soundio_8h.html#a27c98a78adca62ed32305d7433e8ca47a095d12ac41162eb63dbea65d7c75de71">SoundIoBackendNone</a>) ?</div>
-<div class="line">        <a name="a51"></a><a class="code" href="soundio_8h.html#af9cb2a86f2779ed84be6af6618cf7c63">soundio_connect</a>(soundio) : <a name="a52"></a><a class="code" href="soundio_8h.html#a397623ded316028fcdc57ed59d5f6815">soundio_connect_backend</a>(soundio, backend);</div>
+<div class="line">        <a name="a51"></a><a class="code" href="soundio_8h.html#abdace6c0ee81959e4284cfc36a5ce66d">soundio_connect</a>(soundio) : <a name="a52"></a><a class="code" href="soundio_8h.html#aaa26217716f3cd99932f988a017c56f1">soundio_connect_backend</a>(soundio, backend);</div>
 <div class="line">    <span class="keywordflow">if</span> (err)</div>
-<div class="line">        panic(<span class="stringliteral">&quot;error connecting: %s&quot;</span>, <a class="code" href="soundio_8h.html#ae67a82a6ca559c52a1a11a41038dda5d">soundio_strerror</a>(err));</div>
+<div class="line">        panic(<span class="stringliteral">&quot;error connecting: %s&quot;</span>, <a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
 <div class="line"></div>
-<div class="line">    <a name="a53"></a><a class="code" href="soundio_8h.html#a71dccf3fee95dfe7d776159da912ac72">soundio_flush_events</a>(soundio);</div>
+<div class="line">    <a name="a53"></a><a class="code" href="soundio_8h.html#a71d0da4c89d66f8115127747086e54d0">soundio_flush_events</a>(soundio);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordtype">int</span> default_out_device_index = <a name="a54"></a><a class="code" href="soundio_8h.html#aa6ffb2ee7a54af22c5e978299ad29f32">soundio_default_output_device_index</a>(soundio);</div>
+<div class="line">    <span class="keywordtype">int</span> default_out_device_index = <a name="a54"></a><a class="code" href="soundio_8h.html#a934838b4a1056540ec01d6ec9f5764d6">soundio_default_output_device_index</a>(soundio);</div>
 <div class="line">    <span class="keywordflow">if</span> (default_out_device_index &lt; 0)</div>
 <div class="line">        panic(<span class="stringliteral">&quot;no output device found&quot;</span>);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordtype">int</span> default_in_device_index = <a name="a55"></a><a class="code" href="soundio_8h.html#a876a2f5e932c021ae40f5e35ead84f89">soundio_default_input_device_index</a>(soundio);</div>
+<div class="line">    <span class="keywordtype">int</span> default_in_device_index = <a name="a55"></a><a class="code" href="soundio_8h.html#a7ff51091575d6ff0360cb1003aa9840b">soundio_default_input_device_index</a>(soundio);</div>
 <div class="line">    <span class="keywordflow">if</span> (default_in_device_index &lt; 0)</div>
 <div class="line">        panic(<span class="stringliteral">&quot;no output device found&quot;</span>);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">int</span> in_device_index = default_in_device_index;</div>
 <div class="line">    <span class="keywordflow">if</span> (in_device_id) {</div>
 <div class="line">        <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
-<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a name="a56"></a><a class="code" href="soundio_8h.html#a11463849c88fec62f5570bc7e68df799">soundio_input_device_count</a>(soundio); i += 1) {</div>
-<div class="line">            <span class="keyword">struct </span><a name="_a57"></a><a class="code" href="structSoundIoDevice.html">SoundIoDevice</a> *device = <a name="a58"></a><a class="code" href="soundio_8h.html#ac83224a9299e351873985a86de36b62b">soundio_get_input_device</a>(soundio, i);</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a name="a56"></a><a class="code" href="soundio_8h.html#a9ad70e0be5a826aafda5c38330b4405b">soundio_input_device_count</a>(soundio); i += 1) {</div>
+<div class="line">            <span class="keyword">struct </span><a name="_a57"></a><a class="code" href="structSoundIoDevice.html">SoundIoDevice</a> *device = <a name="a58"></a><a class="code" href="soundio_8h.html#a03859b138afd360234f8f62a844ff00d">soundio_get_input_device</a>(soundio, i);</div>
 <div class="line">            <span class="keywordflow">if</span> (device-&gt;<a name="a59"></a><a class="code" href="structSoundIoDevice.html#afb73b9bd13e98a14a187567f508acebe">is_raw</a> == in_raw &amp;&amp; strcmp(device-&gt;<a name="a60"></a><a class="code" href="structSoundIoDevice.html#a7413ecdfdc99f2b89e60fff87c1f8483">id</a>, in_device_id) == 0) {</div>
 <div class="line">                in_device_index = i;</div>
 <div class="line">                found = <span class="keyword">true</span>;</div>
-<div class="line">                <a name="a61"></a><a class="code" href="soundio_8h.html#a1d86a13ad4ea8425492973eec11c540a">soundio_device_unref</a>(device);</div>
+<div class="line">                <a name="a61"></a><a class="code" href="soundio_8h.html#a4bd2a0c66f5f5d6427a9d246e0d8243a">soundio_device_unref</a>(device);</div>
 <div class="line">                <span class="keywordflow">break</span>;</div>
 <div class="line">            }</div>
-<div class="line">            <a class="code" href="soundio_8h.html#a1d86a13ad4ea8425492973eec11c540a">soundio_device_unref</a>(device);</div>
+<div class="line">            <a class="code" href="soundio_8h.html#a4bd2a0c66f5f5d6427a9d246e0d8243a">soundio_device_unref</a>(device);</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">if</span> (!found)</div>
 <div class="line">            panic(<span class="stringliteral">&quot;invalid input device id: %s&quot;</span>, in_device_id);</div>
@@ -334,33 +334,33 @@ $(document).ready(function(){initNavTree('sio_microphone_8c-example.html','');})
 <div class="line">    <span class="keywordtype">int</span> out_device_index = default_out_device_index;</div>
 <div class="line">    <span class="keywordflow">if</span> (out_device_id) {</div>
 <div class="line">        <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
-<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a name="a62"></a><a class="code" href="soundio_8h.html#a08eea401f8625be5ac457283179b133a">soundio_output_device_count</a>(soundio); i += 1) {</div>
-<div class="line">            <span class="keyword">struct </span><a class="code" href="structSoundIoDevice.html">SoundIoDevice</a> *device = <a name="a63"></a><a class="code" href="soundio_8h.html#a7699bf7163aa74f4d52b9a52248f15cd">soundio_get_output_device</a>(soundio, i);</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a name="a62"></a><a class="code" href="soundio_8h.html#a4313adae0f0fb126b4c2dd36a4ec76de">soundio_output_device_count</a>(soundio); i += 1) {</div>
+<div class="line">            <span class="keyword">struct </span><a class="code" href="structSoundIoDevice.html">SoundIoDevice</a> *device = <a name="a63"></a><a class="code" href="soundio_8h.html#a62b70b821c94272c85d3b7a55ff74ba3">soundio_get_output_device</a>(soundio, i);</div>
 <div class="line">            <span class="keywordflow">if</span> (device-&gt;<a class="code" href="structSoundIoDevice.html#afb73b9bd13e98a14a187567f508acebe">is_raw</a> == out_raw &amp;&amp; strcmp(device-&gt;<a class="code" href="structSoundIoDevice.html#a7413ecdfdc99f2b89e60fff87c1f8483">id</a>, out_device_id) == 0) {</div>
 <div class="line">                out_device_index = i;</div>
 <div class="line">                found = <span class="keyword">true</span>;</div>
-<div class="line">                <a class="code" href="soundio_8h.html#a1d86a13ad4ea8425492973eec11c540a">soundio_device_unref</a>(device);</div>
+<div class="line">                <a class="code" href="soundio_8h.html#a4bd2a0c66f5f5d6427a9d246e0d8243a">soundio_device_unref</a>(device);</div>
 <div class="line">                <span class="keywordflow">break</span>;</div>
 <div class="line">            }</div>
-<div class="line">            <a class="code" href="soundio_8h.html#a1d86a13ad4ea8425492973eec11c540a">soundio_device_unref</a>(device);</div>
+<div class="line">            <a class="code" href="soundio_8h.html#a4bd2a0c66f5f5d6427a9d246e0d8243a">soundio_device_unref</a>(device);</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">if</span> (!found)</div>
 <div class="line">            panic(<span class="stringliteral">&quot;invalid output device id: %s&quot;</span>, out_device_id);</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keyword">struct </span><a class="code" href="structSoundIoDevice.html">SoundIoDevice</a> *out_device = <a class="code" href="soundio_8h.html#a7699bf7163aa74f4d52b9a52248f15cd">soundio_get_output_device</a>(soundio, out_device_index);</div>
+<div class="line">    <span class="keyword">struct </span><a class="code" href="structSoundIoDevice.html">SoundIoDevice</a> *out_device = <a class="code" href="soundio_8h.html#a62b70b821c94272c85d3b7a55ff74ba3">soundio_get_output_device</a>(soundio, out_device_index);</div>
 <div class="line">    <span class="keywordflow">if</span> (!out_device)</div>
 <div class="line">        panic(<span class="stringliteral">&quot;could not get output device: out of memory&quot;</span>);</div>
 <div class="line"></div>
-<div class="line">    <span class="keyword">struct </span><a class="code" href="structSoundIoDevice.html">SoundIoDevice</a> *in_device = <a class="code" href="soundio_8h.html#ac83224a9299e351873985a86de36b62b">soundio_get_input_device</a>(soundio, in_device_index);</div>
+<div class="line">    <span class="keyword">struct </span><a class="code" href="structSoundIoDevice.html">SoundIoDevice</a> *in_device = <a class="code" href="soundio_8h.html#a03859b138afd360234f8f62a844ff00d">soundio_get_input_device</a>(soundio, in_device_index);</div>
 <div class="line">    <span class="keywordflow">if</span> (!in_device)</div>
 <div class="line">        panic(<span class="stringliteral">&quot;could not get input device: out of memory&quot;</span>);</div>
 <div class="line"></div>
 <div class="line">    fprintf(stderr, <span class="stringliteral">&quot;Input device: %s\n&quot;</span>, in_device-&gt;<a name="a64"></a><a class="code" href="structSoundIoDevice.html#a364b77e81883dc151fce31d2793e80f3">name</a>);</div>
 <div class="line">    fprintf(stderr, <span class="stringliteral">&quot;Output device: %s\n&quot;</span>, out_device-&gt;<a class="code" href="structSoundIoDevice.html#a364b77e81883dc151fce31d2793e80f3">name</a>);</div>
 <div class="line"></div>
-<div class="line">    <a name="a65"></a><a class="code" href="soundio_8h.html#ab9b501f491d55fdc134f2659e0563cea">soundio_device_sort_channel_layouts</a>(out_device);</div>
-<div class="line">    <span class="keyword">const</span> <span class="keyword">struct </span><a name="_a66"></a><a class="code" href="structSoundIoChannelLayout.html">SoundIoChannelLayout</a> *layout = <a name="a67"></a><a class="code" href="soundio_8h.html#a5543c45f8f29689a86f023472a223f6e">soundio_best_matching_channel_layout</a>(</div>
+<div class="line">    <a name="a65"></a><a class="code" href="soundio_8h.html#a8e7d420364048043cc21cd4c0420f408">soundio_device_sort_channel_layouts</a>(out_device);</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">struct </span><a name="_a66"></a><a class="code" href="structSoundIoChannelLayout.html">SoundIoChannelLayout</a> *layout = <a name="a67"></a><a class="code" href="soundio_8h.html#ae4b93e9d2be773a34369e8bc465e3cfe">soundio_best_matching_channel_layout</a>(</div>
 <div class="line">            out_device-&gt;<a name="a68"></a><a class="code" href="structSoundIoDevice.html#a4d82b4c282931e3c819be01fe6c42052">layouts</a>, out_device-&gt;<a name="a69"></a><a class="code" href="structSoundIoDevice.html#a259a5799492de124be78ff7ba4fbd32b">layout_count</a>,</div>
 <div class="line">            in_device-&gt;<a class="code" href="structSoundIoDevice.html#a4d82b4c282931e3c819be01fe6c42052">layouts</a>, in_device-&gt;<a class="code" href="structSoundIoDevice.html#a259a5799492de124be78ff7ba4fbd32b">layout_count</a>);</div>
 <div class="line"></div>
@@ -369,8 +369,8 @@ $(document).ready(function(){initNavTree('sio_microphone_8c-example.html','');})
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">int</span> *sample_rate;</div>
 <div class="line">    <span class="keywordflow">for</span> (sample_rate = prioritized_sample_rates; *sample_rate; sample_rate += 1) {</div>
-<div class="line">        <span class="keywordflow">if</span> (<a name="a70"></a><a class="code" href="soundio_8h.html#a94a8110be7f60be5a923e02ee0cb8cad">soundio_device_supports_sample_rate</a>(in_device, *sample_rate) &amp;&amp;</div>
-<div class="line">            <a class="code" href="soundio_8h.html#a94a8110be7f60be5a923e02ee0cb8cad">soundio_device_supports_sample_rate</a>(out_device, *sample_rate))</div>
+<div class="line">        <span class="keywordflow">if</span> (<a name="a70"></a><a class="code" href="soundio_8h.html#a4a1c45331cec68b2d0aca4e3eca662d1">soundio_device_supports_sample_rate</a>(in_device, *sample_rate) &amp;&amp;</div>
+<div class="line">            <a class="code" href="soundio_8h.html#a4a1c45331cec68b2d0aca4e3eca662d1">soundio_device_supports_sample_rate</a>(out_device, *sample_rate))</div>
 <div class="line">        {</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        }</div>
@@ -380,8 +380,8 @@ $(document).ready(function(){initNavTree('sio_microphone_8c-example.html','');})
 <div class="line"></div>
 <div class="line">    <span class="keyword">enum</span> <a class="code" href="soundio_8h.html#aef491940cf81c91cf8ce15783a294af0">SoundIoFormat</a> *fmt;</div>
 <div class="line">    <span class="keywordflow">for</span> (fmt = prioritized_formats; *fmt != <a class="code" href="soundio_8h.html#aef491940cf81c91cf8ce15783a294af0ad5d9cfc9110d660ab4631bfffe676f82">SoundIoFormatInvalid</a>; fmt += 1) {</div>
-<div class="line">        <span class="keywordflow">if</span> (<a name="a71"></a><a class="code" href="soundio_8h.html#a07216f7665c1116578687bde109c72b5">soundio_device_supports_format</a>(in_device, *fmt) &amp;&amp;</div>
-<div class="line">            <a class="code" href="soundio_8h.html#a07216f7665c1116578687bde109c72b5">soundio_device_supports_format</a>(out_device, *fmt))</div>
+<div class="line">        <span class="keywordflow">if</span> (<a name="a71"></a><a class="code" href="soundio_8h.html#a4d8160fcd03e4366a4912279b5e60f04">soundio_device_supports_format</a>(in_device, *fmt) &amp;&amp;</div>
+<div class="line">            <a class="code" href="soundio_8h.html#a4d8160fcd03e4366a4912279b5e60f04">soundio_device_supports_format</a>(out_device, *fmt))</div>
 <div class="line">        {</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        }</div>
@@ -389,7 +389,7 @@ $(document).ready(function(){initNavTree('sio_microphone_8c-example.html','');})
 <div class="line">    <span class="keywordflow">if</span> (*fmt == <a class="code" href="soundio_8h.html#aef491940cf81c91cf8ce15783a294af0ad5d9cfc9110d660ab4631bfffe676f82">SoundIoFormatInvalid</a>)</div>
 <div class="line">        panic(<span class="stringliteral">&quot;incompatible sample formats&quot;</span>);</div>
 <div class="line"></div>
-<div class="line">    <span class="keyword">struct </span><a class="code" href="structSoundIoInStream.html">SoundIoInStream</a> *instream = <a name="a72"></a><a class="code" href="soundio_8h.html#a29c0c57797206a673d1f6c173179d001">soundio_instream_create</a>(in_device);</div>
+<div class="line">    <span class="keyword">struct </span><a class="code" href="structSoundIoInStream.html">SoundIoInStream</a> *instream = <a name="a72"></a><a class="code" href="soundio_8h.html#aba34c36fa9c2d1ad32d56777c11aff46">soundio_instream_create</a>(in_device);</div>
 <div class="line">    <span class="keywordflow">if</span> (!instream)</div>
 <div class="line">        panic(<span class="stringliteral">&quot;out of memory&quot;</span>);</div>
 <div class="line">    instream-&gt;<a name="a73"></a><a class="code" href="structSoundIoInStream.html#a884ee9d40594e4a07338fe77e616c3ff">format</a> = *fmt;</div>
@@ -398,12 +398,12 @@ $(document).ready(function(){initNavTree('sio_microphone_8c-example.html','');})
 <div class="line">    instream-&gt;<a name="a75"></a><a class="code" href="structSoundIoInStream.html#a39160da93a68220f8cb1d1f10b0e7a3d">software_latency</a> = microphone_latency;</div>
 <div class="line">    instream-&gt;<a name="a76"></a><a class="code" href="structSoundIoInStream.html#aecda2dbb80f79bee8f906c88fd6c00d9">read_callback</a> = <a class="code" href="structSoundIoInStream.html#aecda2dbb80f79bee8f906c88fd6c00d9">read_callback</a>;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> ((err = <a name="a77"></a><a class="code" href="soundio_8h.html#a9a50e1d8aab9181106ee8bb578140c28">soundio_instream_open</a>(instream))) {</div>
-<div class="line">        fprintf(stderr, <span class="stringliteral">&quot;unable to open input stream: %s&quot;</span>, <a class="code" href="soundio_8h.html#ae67a82a6ca559c52a1a11a41038dda5d">soundio_strerror</a>(err));</div>
+<div class="line">    <span class="keywordflow">if</span> ((err = <a name="a77"></a><a class="code" href="soundio_8h.html#a8ecf120bc886f31ee2642284dd0dbd81">soundio_instream_open</a>(instream))) {</div>
+<div class="line">        fprintf(stderr, <span class="stringliteral">&quot;unable to open input stream: %s&quot;</span>, <a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
 <div class="line">        <span class="keywordflow">return</span> 1;</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keyword">struct </span><a class="code" href="structSoundIoOutStream.html">SoundIoOutStream</a> *outstream = <a name="a78"></a><a class="code" href="soundio_8h.html#a6c1ae309852e0b7c05407e3fdc30f3bd">soundio_outstream_create</a>(out_device);</div>
+<div class="line">    <span class="keyword">struct </span><a class="code" href="structSoundIoOutStream.html">SoundIoOutStream</a> *outstream = <a name="a78"></a><a class="code" href="soundio_8h.html#a6bea3bceca0c3aafa940ae1a224573bb">soundio_outstream_create</a>(out_device);</div>
 <div class="line">    <span class="keywordflow">if</span> (!outstream)</div>
 <div class="line">        panic(<span class="stringliteral">&quot;out of memory&quot;</span>);</div>
 <div class="line">    outstream-&gt;<a name="a79"></a><a class="code" href="structSoundIoOutStream.html#a164722836745394086aefb53f0a0c5c8">format</a> = *fmt;</div>
@@ -413,34 +413,34 @@ $(document).ready(function(){initNavTree('sio_microphone_8c-example.html','');})
 <div class="line">    outstream-&gt;<a name="a82"></a><a class="code" href="structSoundIoOutStream.html#a9b6634417ccaec9b5c4376728efb186d">write_callback</a> = <a class="code" href="structSoundIoOutStream.html#a9b6634417ccaec9b5c4376728efb186d">write_callback</a>;</div>
 <div class="line">    outstream-&gt;<a name="a83"></a><a class="code" href="structSoundIoOutStream.html#ae00fe63a46a0fe106430692f75337e34">underflow_callback</a> = <a class="code" href="structSoundIoOutStream.html#ae00fe63a46a0fe106430692f75337e34">underflow_callback</a>;</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> ((err = <a name="a84"></a><a class="code" href="soundio_8h.html#ae05453eeba3fb87493110e3f413f3683">soundio_outstream_open</a>(outstream))) {</div>
-<div class="line">        fprintf(stderr, <span class="stringliteral">&quot;unable to open output stream: %s&quot;</span>, <a class="code" href="soundio_8h.html#ae67a82a6ca559c52a1a11a41038dda5d">soundio_strerror</a>(err));</div>
+<div class="line">    <span class="keywordflow">if</span> ((err = <a name="a84"></a><a class="code" href="soundio_8h.html#a67cb9152f3a450f9aa43e4896e83e307">soundio_outstream_open</a>(outstream))) {</div>
+<div class="line">        fprintf(stderr, <span class="stringliteral">&quot;unable to open output stream: %s&quot;</span>, <a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
 <div class="line">        <span class="keywordflow">return</span> 1;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">int</span> capacity = microphone_latency * 2 * instream-&gt;<a class="code" href="structSoundIoInStream.html#a08f2e3f2d8818eb8581f78859c85fbd1">sample_rate</a> * instream-&gt;<a class="code" href="structSoundIoInStream.html#a85a89a99de54b05975350a7436e443bd">bytes_per_frame</a>;</div>
-<div class="line">    ring_buffer = <a name="a85"></a><a class="code" href="soundio_8h.html#a53edf228ef5bc7240261528e224d728b">soundio_ring_buffer_create</a>(soundio, capacity);</div>
+<div class="line">    ring_buffer = <a name="a85"></a><a class="code" href="soundio_8h.html#adcd0a77db4f04fbf5137abc7becda860">soundio_ring_buffer_create</a>(soundio, capacity);</div>
 <div class="line">    <span class="keywordflow">if</span> (!ring_buffer)</div>
 <div class="line">        panic(<span class="stringliteral">&quot;unable to create ring buffer: out of memory&quot;</span>);</div>
-<div class="line">    <span class="keywordtype">char</span> *buf = <a class="code" href="soundio_8h.html#ade966416b1d525504e8dc5235bf216f8">soundio_ring_buffer_write_ptr</a>(ring_buffer);</div>
+<div class="line">    <span class="keywordtype">char</span> *buf = <a class="code" href="soundio_8h.html#a1ef789a8686ff3ec30758f96b19874ae">soundio_ring_buffer_write_ptr</a>(ring_buffer);</div>
 <div class="line">    <span class="keywordtype">int</span> fill_count = microphone_latency * outstream-&gt;<a class="code" href="structSoundIoOutStream.html#a7c2d76e17c5031a589879522b7a823d1">sample_rate</a> * outstream-&gt;<a class="code" href="structSoundIoOutStream.html#a799cd8220282eee3d21b6a0511e9533a">bytes_per_frame</a>;</div>
 <div class="line">    memset(buf, 0, fill_count);</div>
-<div class="line">    <a class="code" href="soundio_8h.html#ad09e77324eb74d30894dd05fccf7e67b">soundio_ring_buffer_advance_write_ptr</a>(ring_buffer, fill_count);</div>
+<div class="line">    <a class="code" href="soundio_8h.html#af629cd68ecf14004fd5321c57f92cfc6">soundio_ring_buffer_advance_write_ptr</a>(ring_buffer, fill_count);</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> ((err = <a name="a86"></a><a class="code" href="soundio_8h.html#afabff3dfd4b5927dd2b098674bcdb514">soundio_instream_start</a>(instream)))</div>
-<div class="line">        panic(<span class="stringliteral">&quot;unable to start input device: %s&quot;</span>, <a class="code" href="soundio_8h.html#ae67a82a6ca559c52a1a11a41038dda5d">soundio_strerror</a>(err));</div>
+<div class="line">    <span class="keywordflow">if</span> ((err = <a name="a86"></a><a class="code" href="soundio_8h.html#aa0c96444906a11fcc1a0f8ef37968f28">soundio_instream_start</a>(instream)))</div>
+<div class="line">        panic(<span class="stringliteral">&quot;unable to start input device: %s&quot;</span>, <a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordflow">if</span> ((err = <a name="a87"></a><a class="code" href="soundio_8h.html#a07ec2e1d3bf99b37bbe59476d29d12f0">soundio_outstream_start</a>(outstream)))</div>
-<div class="line">        panic(<span class="stringliteral">&quot;unable to start output device: %s&quot;</span>, <a class="code" href="soundio_8h.html#ae67a82a6ca559c52a1a11a41038dda5d">soundio_strerror</a>(err));</div>
+<div class="line">    <span class="keywordflow">if</span> ((err = <a name="a87"></a><a class="code" href="soundio_8h.html#aa62e51d08df9e6c9f4670ba5c5524ef3">soundio_outstream_start</a>(outstream)))</div>
+<div class="line">        panic(<span class="stringliteral">&quot;unable to start output device: %s&quot;</span>, <a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span> (;;)</div>
-<div class="line">        <a name="a88"></a><a class="code" href="soundio_8h.html#abcf81bd73586c85c0ab2df082f72f20d">soundio_wait_events</a>(soundio);</div>
+<div class="line">        <a name="a88"></a><a class="code" href="soundio_8h.html#a08cb0702839f4b416991f52a574ffda9">soundio_wait_events</a>(soundio);</div>
 <div class="line"></div>
-<div class="line">    <a name="a89"></a><a class="code" href="soundio_8h.html#a59eece69af40135fd566ee832e276329">soundio_outstream_destroy</a>(outstream);</div>
-<div class="line">    <a name="a90"></a><a class="code" href="soundio_8h.html#a385300619be41986b5e339f1092de5f6">soundio_instream_destroy</a>(instream);</div>
-<div class="line">    <a class="code" href="soundio_8h.html#a1d86a13ad4ea8425492973eec11c540a">soundio_device_unref</a>(in_device);</div>
-<div class="line">    <a class="code" href="soundio_8h.html#a1d86a13ad4ea8425492973eec11c540a">soundio_device_unref</a>(out_device);</div>
-<div class="line">    <a name="a91"></a><a class="code" href="soundio_8h.html#a19e112a26941a5a02da3e0f7f90efd2f">soundio_destroy</a>(soundio);</div>
+<div class="line">    <a name="a89"></a><a class="code" href="soundio_8h.html#a80d9cc2dbc5178cbe9ae7b578f3c23d7">soundio_outstream_destroy</a>(outstream);</div>
+<div class="line">    <a name="a90"></a><a class="code" href="soundio_8h.html#a80585672c4e24138a649e2982c6ca7b6">soundio_instream_destroy</a>(instream);</div>
+<div class="line">    <a class="code" href="soundio_8h.html#a4bd2a0c66f5f5d6427a9d246e0d8243a">soundio_device_unref</a>(in_device);</div>
+<div class="line">    <a class="code" href="soundio_8h.html#a4bd2a0c66f5f5d6427a9d246e0d8243a">soundio_device_unref</a>(out_device);</div>
+<div class="line">    <a name="a91"></a><a class="code" href="soundio_8h.html#a4d24b521da70ffa55192036956638e9c">soundio_destroy</a>(soundio);</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->

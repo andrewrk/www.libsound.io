@@ -270,7 +270,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Channel layouts are handled similarly to <a class="el" href="structSoundIoDevice.html#acf6c78f0835ec03f3afefd9e6d29c3bd" title="List of formats this device supports. ">SoundIoDevice::formats</a>. </p>
-<p>If this information is missing due to a <a class="el" href="structSoundIoDevice.html#a129f523c7d43096985c058bc67fe3b6c" title="This is set to a SoundIoError representing the result of the device probe. ">SoundIoDevice::probe_error</a>, layouts will be NULL. It's OK to modify this data, for example calling <a class="el" href="soundio_8h.html#a13309b1b9fb84ce8afeec333fedfd605" title="Sorts by channel count, descending. ">soundio_sort_channel_layouts</a> on it. Devices are guaranteed to have at least 1 channel layout. </p>
+<p>If this information is missing due to a <a class="el" href="structSoundIoDevice.html#a129f523c7d43096985c058bc67fe3b6c" title="This is set to a SoundIoError representing the result of the device probe. ">SoundIoDevice::probe_error</a>, layouts will be NULL. It's OK to modify this data, for example calling <a class="el" href="soundio_8h.html#adaf662c416186678aef5388823c0ff4c" title="Sorts by channel count, descending. ">soundio_sort_channel_layouts</a> on it. Devices are guaranteed to have at least 1 channel layout. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a12">sio_list_devices.c</a>, and <a class="el" href="sio_microphone_8c-example.html#a68">sio_microphone.c</a>.</dd>
 </dl>
 </div>
@@ -301,8 +301,13 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This is set to a SoundIoError representing the result of the device probe. </p>
-<p>Ideally this will be SoundIoErrorNone in which case all the fields of the device will be populated. If there is an error code here then information about formats, sample rates, and channel layouts might be missing. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a9">sio_list_devices.c</a>.</dd>
+<p>Ideally this will be SoundIoErrorNone in which case all the fields of the device will be populated. If there is an error code here then information about formats, sample rates, and channel layouts might be missing.</p>
+<p>Possible errors:</p>
+<ul>
+<li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5aeb4e8bddfe4a31d38fd83e61a2870b20" title="Attempted to open a device and failed. ">SoundIoErrorOpeningDevice</a></li>
+<li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a6c50795841b6fbfc069a25cba2f0a983" title="Out of memory. ">SoundIoErrorNoMem</a> </li>
+</ul>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a9">sio_list_devices.c</a>, and <a class="el" href="sio_sine_8c-example.html#a32">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -317,7 +322,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Devices are reference counted. </p>
-<p>See <a class="el" href="soundio_8h.html#a1352c0ead9374ff0082fdfe596bbbec7" title="Add 1 to the reference count of device. ">soundio_device_ref</a> and <a class="el" href="soundio_8h.html#a1d86a13ad4ea8425492973eec11c540a" title="Remove 1 to the reference count of device. ">soundio_device_unref</a>. </p>
+<p>See <a class="el" href="soundio_8h.html#a0697931da82508973d8c7f35a1405188" title="Add 1 to the reference count of device. ">soundio_device_ref</a> and <a class="el" href="soundio_8h.html#a4bd2a0c66f5f5d6427a9d246e0d8243a" title="Remove 1 to the reference count of device. ">soundio_device_unref</a>. </p>
 
 </div>
 </div>
