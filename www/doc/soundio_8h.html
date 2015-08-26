@@ -493,15 +493,18 @@ Functions</h2></td></tr>
 <tr class="memdesc:a75de5051b78b03a6ecd8980190b94070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given UTF-8 encoded text which is the name of a channel such as "Front Left", "FL", or "front-left", return the corresponding SoundIoChannelId.  <a href="#a75de5051b78b03a6ecd8980190b94070">More...</a><br/></td></tr>
 <tr class="separator:a75de5051b78b03a6ecd8980190b94070"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade4c95254e4fc73958365c6bdd4dc7e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="soundio_8h.html#abb0ae4be2dcdc444abce2b7680534d50">SOUNDIO_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#ade4c95254e4fc73958365c6bdd4dc7e1">soundio_channel_layout_builtin_count</a> (void)</td></tr>
+<tr class="memdesc:ade4c95254e4fc73958365c6bdd4dc7e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of builtin channel layouts.  <a href="#ade4c95254e4fc73958365c6bdd4dc7e1">More...</a><br/></td></tr>
 <tr class="separator:ade4c95254e4fc73958365c6bdd4dc7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a407196ff0f775d0b81c6ea6e18be4d66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="soundio_8h.html#abb0ae4be2dcdc444abce2b7680534d50">SOUNDIO_EXPORT</a> const struct <br class="typebreak"/>
 <a class="el" href="structSoundIoChannelLayout.html">SoundIoChannelLayout</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#a407196ff0f775d0b81c6ea6e18be4d66">soundio_channel_layout_get_builtin</a> (int index)</td></tr>
+<tr class="memdesc:a407196ff0f775d0b81c6ea6e18be4d66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a builtin channel layout. 0 &lt;= <code>index</code> &lt; <a class="el" href="soundio_8h.html#ade4c95254e4fc73958365c6bdd4dc7e1" title="Returns the number of builtin channel layouts. ">soundio_channel_layout_builtin_count</a>.  <a href="#a407196ff0f775d0b81c6ea6e18be4d66">More...</a><br/></td></tr>
 <tr class="separator:a407196ff0f775d0b81c6ea6e18be4d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa342a775e2183cb21bcc4c218c72f192"><td class="memItemLeft" align="right" valign="top"><a class="el" href="soundio_8h.html#abb0ae4be2dcdc444abce2b7680534d50">SOUNDIO_EXPORT</a> const struct <br class="typebreak"/>
 <a class="el" href="structSoundIoChannelLayout.html">SoundIoChannelLayout</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#aa342a775e2183cb21bcc4c218c72f192">soundio_channel_layout_get_default</a> (int channel_count)</td></tr>
 <tr class="memdesc:aa342a775e2183cb21bcc4c218c72f192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the default builtin channel layout for the given number of channels.  <a href="#aa342a775e2183cb21bcc4c218c72f192">More...</a><br/></td></tr>
 <tr class="separator:aa342a775e2183cb21bcc4c218c72f192"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0a4a3127dfac05d2117a0d8c2c7130b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="soundio_8h.html#abb0ae4be2dcdc444abce2b7680534d50">SOUNDIO_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#ac0a4a3127dfac05d2117a0d8c2c7130b">soundio_channel_layout_find_channel</a> (const struct <a class="el" href="structSoundIoChannelLayout.html">SoundIoChannelLayout</a> *layout, enum <a class="el" href="soundio_8h.html#a44cf9c002c381d695e483adcbe1f924f">SoundIoChannelId</a> channel)</td></tr>
+<tr class="memdesc:ac0a4a3127dfac05d2117a0d8c2c7130b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the index of <code>channel</code> in <code>layout</code>, or <code>-1</code> if not found.  <a href="#ac0a4a3127dfac05d2117a0d8c2c7130b">More...</a><br/></td></tr>
 <tr class="separator:ac0a4a3127dfac05d2117a0d8c2c7130b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c8b86dc97dda2d75f4329c4a60e261e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="soundio_8h.html#abb0ae4be2dcdc444abce2b7680534d50">SOUNDIO_EXPORT</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#a1c8b86dc97dda2d75f4329c4a60e261e">soundio_channel_layout_detect_builtin</a> (struct <a class="el" href="structSoundIoChannelLayout.html">SoundIoChannelLayout</a> *layout)</td></tr>
 <tr class="memdesc:a1c8b86dc97dda2d75f4329c4a60e261e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populates the name field of layout if it matches a builtin one.  <a href="#a1c8b86dc97dda2d75f4329c4a60e261e">More...</a><br/></td></tr>
@@ -517,11 +520,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae5f0f6f4d83838308810c66dfc74a06b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns -1 on invalid format.  <a href="#ae5f0f6f4d83838308810c66dfc74a06b">More...</a><br/></td></tr>
 <tr class="separator:ae5f0f6f4d83838308810c66dfc74a06b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcace9874381f2b46dc77fa07974742d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#abcace9874381f2b46dc77fa07974742d">soundio_get_bytes_per_frame</a> (enum <a class="el" href="soundio_8h.html#aef491940cf81c91cf8ce15783a294af0">SoundIoFormat</a> format, int channel_count)</td></tr>
+<tr class="memdesc:abcace9874381f2b46dc77fa07974742d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A frame is one sample per channel.  <a href="#abcace9874381f2b46dc77fa07974742d">More...</a><br/></td></tr>
 <tr class="separator:abcace9874381f2b46dc77fa07974742d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf80332c3c6c38767d4ddaab3153c52f"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#abf80332c3c6c38767d4ddaab3153c52f">soundio_get_bytes_per_second</a> (enum <a class="el" href="soundio_8h.html#aef491940cf81c91cf8ce15783a294af0">SoundIoFormat</a> format, int channel_count, int sample_rate)</td></tr>
 <tr class="memdesc:abf80332c3c6c38767d4ddaab3153c52f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample rate is the number of frames per second.  <a href="#abf80332c3c6c38767d4ddaab3153c52f">More...</a><br/></td></tr>
 <tr class="separator:abf80332c3c6c38767d4ddaab3153c52f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66e24039e3e8f26068de9927ae3f8fb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="soundio_8h.html#abb0ae4be2dcdc444abce2b7680534d50">SOUNDIO_EXPORT</a> const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#a66e24039e3e8f26068de9927ae3f8fb7">soundio_format_string</a> (enum <a class="el" href="soundio_8h.html#aef491940cf81c91cf8ce15783a294af0">SoundIoFormat</a> format)</td></tr>
+<tr class="memdesc:a66e24039e3e8f26068de9927ae3f8fb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns string representation of <code>format</code>.  <a href="#a66e24039e3e8f26068de9927ae3f8fb7">More...</a><br/></td></tr>
 <tr class="separator:a66e24039e3e8f26068de9927ae3f8fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11463849c88fec62f5570bc7e68df799"><td class="memItemLeft" align="right" valign="top"><a class="el" href="soundio_8h.html#abb0ae4be2dcdc444abce2b7680534d50">SOUNDIO_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#a11463849c88fec62f5570bc7e68df799">soundio_input_device_count</a> (struct <a class="el" href="structSoundIo.html">SoundIo</a> *soundio)</td></tr>
 <tr class="memdesc:a11463849c88fec62f5570bc7e68df799"><td class="mdescLeft">&#160;</td><td class="mdescRight">When you call <a class="el" href="soundio_8h.html#a71dccf3fee95dfe7d776159da912ac72" title="When you call this, the SoundIo::on_devices_change and SoundIo::on_events_signal callbacks might be c...">soundio_flush_events</a>, a snapshot of all device state is saved and these functions merely access the snapshot data.  <a href="#a11463849c88fec62f5570bc7e68df799">More...</a><br/></td></tr>
@@ -544,10 +549,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:aa6ffb2ee7a54af22c5e978299ad29f32"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the index of the default output device returns -1 if there are no devices or if you never called <a class="el" href="soundio_8h.html#a71dccf3fee95dfe7d776159da912ac72" title="When you call this, the SoundIo::on_devices_change and SoundIo::on_events_signal callbacks might be c...">soundio_flush_events</a>.  <a href="#aa6ffb2ee7a54af22c5e978299ad29f32">More...</a><br/></td></tr>
 <tr class="separator:aa6ffb2ee7a54af22c5e978299ad29f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1352c0ead9374ff0082fdfe596bbbec7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="soundio_8h.html#abb0ae4be2dcdc444abce2b7680534d50">SOUNDIO_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#a1352c0ead9374ff0082fdfe596bbbec7">soundio_device_ref</a> (struct <a class="el" href="structSoundIoDevice.html">SoundIoDevice</a> *device)</td></tr>
+<tr class="memdesc:a1352c0ead9374ff0082fdfe596bbbec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add 1 to the reference count of <code>device</code>.  <a href="#a1352c0ead9374ff0082fdfe596bbbec7">More...</a><br/></td></tr>
 <tr class="separator:a1352c0ead9374ff0082fdfe596bbbec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d86a13ad4ea8425492973eec11c540a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="soundio_8h.html#abb0ae4be2dcdc444abce2b7680534d50">SOUNDIO_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#a1d86a13ad4ea8425492973eec11c540a">soundio_device_unref</a> (struct <a class="el" href="structSoundIoDevice.html">SoundIoDevice</a> *device)</td></tr>
+<tr class="memdesc:a1d86a13ad4ea8425492973eec11c540a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove 1 to the reference count of <code>device</code>.  <a href="#a1d86a13ad4ea8425492973eec11c540a">More...</a><br/></td></tr>
 <tr class="separator:a1d86a13ad4ea8425492973eec11c540a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0920823eb503994d800565ee0cd851ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="soundio_8h.html#abb0ae4be2dcdc444abce2b7680534d50">SOUNDIO_EXPORT</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#a0920823eb503994d800565ee0cd851ad">soundio_device_equal</a> (const struct <a class="el" href="structSoundIoDevice.html">SoundIoDevice</a> *a, const struct <a class="el" href="structSoundIoDevice.html">SoundIoDevice</a> *b)</td></tr>
+<tr class="memdesc:a0920823eb503994d800565ee0cd851ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return <code>true</code> if and only if the devices have the same <a class="el" href="structSoundIoDevice.html#a7413ecdfdc99f2b89e60fff87c1f8483" title="A string of bytes that uniquely identifies this device. ">SoundIoDevice::id</a>, <a class="el" href="structSoundIoDevice.html#afb73b9bd13e98a14a187567f508acebe" title="Raw means that you are directly opening the hardware device and not going through a proxy such as dmi...">SoundIoDevice::is_raw</a>, and <a class="el" href="structSoundIoDevice.html#ad0bb990b55420890b1b6eb8f1e3b0db0" title="Tells whether this device is an input device or an output device. ">SoundIoDevice::aim</a> are the same.  <a href="#a0920823eb503994d800565ee0cd851ad">More...</a><br/></td></tr>
 <tr class="separator:a0920823eb503994d800565ee0cd851ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9b501f491d55fdc134f2659e0563cea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="soundio_8h.html#abb0ae4be2dcdc444abce2b7680534d50">SOUNDIO_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#ab9b501f491d55fdc134f2659e0563cea">soundio_device_sort_channel_layouts</a> (struct <a class="el" href="structSoundIoDevice.html">SoundIoDevice</a> *device)</td></tr>
 <tr class="memdesc:ab9b501f491d55fdc134f2659e0563cea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts channel layouts by channel count, descending.  <a href="#ab9b501f491d55fdc134f2659e0563cea">More...</a><br/></td></tr>
@@ -618,6 +626,7 @@ SoundIoRingBuffer *&#160;</td><td class="memItemRight" valign="bottom"><a class=
 <tr class="memitem:a6bf5f5993b8602294425d655d3c3d5cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="soundio_8h.html#abb0ae4be2dcdc444abce2b7680534d50">SOUNDIO_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#a6bf5f5993b8602294425d655d3c3d5cc">soundio_ring_buffer_destroy</a> (struct SoundIoRingBuffer *ring_buffer)</td></tr>
 <tr class="separator:a6bf5f5993b8602294425d655d3c3d5cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28b61a0b8572fbda7768c43bb2c664b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="soundio_8h.html#abb0ae4be2dcdc444abce2b7680534d50">SOUNDIO_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#a28b61a0b8572fbda7768c43bb2c664b6">soundio_ring_buffer_capacity</a> (struct SoundIoRingBuffer *ring_buffer)</td></tr>
+<tr class="memdesc:a28b61a0b8572fbda7768c43bb2c664b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">When you create a ring buffer, capacity might be more than the requested capacity for alignment purposes.  <a href="#a28b61a0b8572fbda7768c43bb2c664b6">More...</a><br/></td></tr>
 <tr class="separator:a28b61a0b8572fbda7768c43bb2c664b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade966416b1d525504e8dc5235bf216f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="soundio_8h.html#abb0ae4be2dcdc444abce2b7680534d50">SOUNDIO_EXPORT</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#ade966416b1d525504e8dc5235bf216f8">soundio_ring_buffer_write_ptr</a> (struct SoundIoRingBuffer *ring_buffer)</td></tr>
 <tr class="memdesc:ade966416b1d525504e8dc5235bf216f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">don't write more than capacity  <a href="#ade966416b1d525504e8dc5235bf216f8">More...</a><br/></td></tr>
@@ -1368,6 +1377,8 @@ SoundIoRingBuffer *&#160;</td><td class="memItemRight" valign="bottom"><a class=
       </table>
 </div><div class="memdoc">
 
+<p>Returns the number of builtin channel layouts. </p>
+
 </div>
 </div>
 <a class="anchor" id="a1c8b86dc97dda2d75f4329c4a60e261e"></a>
@@ -1441,6 +1452,8 @@ SoundIoRingBuffer *&#160;</td><td class="memItemRight" valign="bottom"><a class=
       </table>
 </div><div class="memdoc">
 
+<p>Return the index of <code>channel</code> in <code>layout</code>, or <code>-1</code> if not found. </p>
+
 </div>
 </div>
 <a class="anchor" id="a407196ff0f775d0b81c6ea6e18be4d66"></a>
@@ -1456,6 +1469,8 @@ SoundIoRingBuffer *&#160;</td><td class="memItemRight" valign="bottom"><a class=
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns a builtin channel layout. 0 &lt;= <code>index</code> &lt; <a class="el" href="soundio_8h.html#ade4c95254e4fc73958365c6bdd4dc7e1" title="Returns the number of builtin channel layouts. ">soundio_channel_layout_builtin_count</a>. </p>
 
 </div>
 </div>
@@ -1626,6 +1641,8 @@ SoundIoRingBuffer *&#160;</td><td class="memItemRight" valign="bottom"><a class=
       </table>
 </div><div class="memdoc">
 
+<p>Return <code>true</code> if and only if the devices have the same <a class="el" href="structSoundIoDevice.html#a7413ecdfdc99f2b89e60fff87c1f8483" title="A string of bytes that uniquely identifies this device. ">SoundIoDevice::id</a>, <a class="el" href="structSoundIoDevice.html#afb73b9bd13e98a14a187567f508acebe" title="Raw means that you are directly opening the hardware device and not going through a proxy such as dmi...">SoundIoDevice::is_raw</a>, and <a class="el" href="structSoundIoDevice.html#ad0bb990b55420890b1b6eb8f1e3b0db0" title="Tells whether this device is an input device or an output device. ">SoundIoDevice::aim</a> are the same. </p>
+
 </div>
 </div>
 <a class="anchor" id="a55603af098499ba6f99718d99b722f20"></a>
@@ -1670,6 +1687,8 @@ SoundIoRingBuffer *&#160;</td><td class="memItemRight" valign="bottom"><a class=
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Add 1 to the reference count of <code>device</code>. </p>
 
 </div>
 </div>
@@ -1794,6 +1813,9 @@ SoundIoRingBuffer *&#160;</td><td class="memItemRight" valign="bottom"><a class=
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Remove 1 to the reference count of <code>device</code>. </p>
+<p>Clean up if it was the last reference. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a34">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a61">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a46">sio_sine.c</a>.</dd>
 </dl>
 </div>
@@ -1855,6 +1877,8 @@ SoundIoRingBuffer *&#160;</td><td class="memItemRight" valign="bottom"><a class=
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns string representation of <code>format</code>. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a21">sio_list_devices.c</a>.</dd>
 </dl>
 </div>
@@ -1918,6 +1942,8 @@ SoundIoRingBuffer *&#160;</td><td class="memItemRight" valign="bottom"><a class=
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>A frame is one sample per channel. </p>
 
 <p>References <a class="el" href="structSoundIoChannelLayout.html#a8812bd6ef1f42b5cab460de9147ac2c7">SoundIoChannelLayout::channel_count</a>, and <a class="el" href="soundio_8h.html#ae5f0f6f4d83838308810c66dfc74a06b">soundio_get_bytes_per_sample()</a>.</p>
 
@@ -2031,7 +2057,7 @@ SoundIoRingBuffer *&#160;</td><td class="memItemRight" valign="bottom"><a class=
 </div><div class="memdoc">
 
 <p>Always returns a device. </p>
-<p>Call <a class="el" href="soundio_8h.html#a1d86a13ad4ea8425492973eec11c540a">soundio_device_unref</a> when done. <code>index</code> must be 0 &lt;= index &lt; <a class="el" href="soundio_8h.html#a11463849c88fec62f5570bc7e68df799" title="When you call soundio_flush_events, a snapshot of all device state is saved and these functions merel...">soundio_input_device_count</a> Returns NULL if you never called <a class="el" href="soundio_8h.html#a71dccf3fee95dfe7d776159da912ac72" title="When you call this, the SoundIo::on_devices_change and SoundIo::on_events_signal callbacks might be c...">soundio_flush_events</a> or if you provide invalid parameter values. </p>
+<p>Call <a class="el" href="soundio_8h.html#a1d86a13ad4ea8425492973eec11c540a" title="Remove 1 to the reference count of device. ">soundio_device_unref</a> when done. <code>index</code> must be 0 &lt;= index &lt; <a class="el" href="soundio_8h.html#a11463849c88fec62f5570bc7e68df799" title="When you call soundio_flush_events, a snapshot of all device state is saved and these functions merel...">soundio_input_device_count</a> Returns NULL if you never called <a class="el" href="soundio_8h.html#a71dccf3fee95dfe7d776159da912ac72" title="When you call this, the SoundIo::on_devices_change and SoundIo::on_events_signal callbacks might be c...">soundio_flush_events</a> or if you provide invalid parameter values. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a33">sio_list_devices.c</a>, and <a class="el" href="sio_microphone_8c-example.html#a58">sio_microphone.c</a>.</dd>
 </dl>
 </div>
@@ -2061,7 +2087,7 @@ SoundIoRingBuffer *&#160;</td><td class="memItemRight" valign="bottom"><a class=
 </div><div class="memdoc">
 
 <p>Always returns a device. </p>
-<p>Call <a class="el" href="soundio_8h.html#a1d86a13ad4ea8425492973eec11c540a">soundio_device_unref</a> when done. <code>index</code> must be 0 &lt;= index &lt; <a class="el" href="soundio_8h.html#a08eea401f8625be5ac457283179b133a" title="Get the number of output devices. ">soundio_output_device_count</a> Returns NULL if you never called <a class="el" href="soundio_8h.html#a71dccf3fee95dfe7d776159da912ac72" title="When you call this, the SoundIo::on_devices_change and SoundIo::on_events_signal callbacks might be c...">soundio_flush_events</a> or if you provide invalid parameter values. </p>
+<p>Call <a class="el" href="soundio_8h.html#a1d86a13ad4ea8425492973eec11c540a" title="Remove 1 to the reference count of device. ">soundio_device_unref</a> when done. <code>index</code> must be 0 &lt;= index &lt; <a class="el" href="soundio_8h.html#a08eea401f8625be5ac457283179b133a" title="Get the number of output devices. ">soundio_output_device_count</a> Returns NULL if you never called <a class="el" href="soundio_8h.html#a71dccf3fee95dfe7d776159da912ac72" title="When you call this, the SoundIo::on_devices_change and SoundIo::on_events_signal callbacks might be c...">soundio_flush_events</a> or if you provide invalid parameter values. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a35">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a63">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a27">sio_sine.c</a>.</dd>
 </dl>
 </div>
@@ -2578,6 +2604,9 @@ SoundIoRingBuffer *&#160;</td><td class="memItemRight" valign="bottom"><a class=
       </table>
 </div><div class="memdoc">
 
+<p>When you create a ring buffer, capacity might be more than the requested capacity for alignment purposes. </p>
+<p>This function returns the actual capacity. </p>
+
 </div>
 </div>
 <a class="anchor" id="aca9b5e3c4fd4c15c48d1a8d510a9f9b2"></a>
@@ -2623,6 +2652,7 @@ SoundIoRingBuffer *&#160;</td><td class="memItemRight" valign="bottom"><a class=
 </div><div class="memdoc">
 
 <p><code>requested_capacity</code> in bytes. </p>
+<p>See also <a class="el" href="soundio_8h.html#a6bf5f5993b8602294425d655d3c3d5cc">soundio_ring_buffer_destroy</a> </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a85">sio_microphone.c</a>.</dd>
 </dl>
 </div>
@@ -2810,7 +2840,7 @@ SoundIoRingBuffer *&#160;</td><td class="memItemRight" valign="bottom"><a class=
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_2d87daca19c39cceff0088f8a1828e1e.html">soundio</a></li><li class="navelem"><a class="el" href="soundio_8h.html">soundio.h</a></li>
-    <li class="footer">Generated on Wed Aug 26 2015 02:35:32 for libsoundio by
+    <li class="footer">Generated on Wed Aug 26 2015 11:22:47 for libsoundio by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
