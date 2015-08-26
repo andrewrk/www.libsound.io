@@ -195,7 +195,14 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Optional callback. </p>
-<p>Called when the backend disconnects. For example, when the JACK server shuts down. When this happens, listing devices and opening streams will always fail with SoundIoErrorBackendDisconnected. This callback is only called during a call to <a class="el" href="soundio_8h.html#a71d0da4c89d66f8115127747086e54d0" title="When you call this, the SoundIo::on_devices_change and SoundIo::on_events_signal callbacks might be c...">soundio_flush_events</a> or <a class="el" href="soundio_8h.html#a08cb0702839f4b416991f52a574ffda9" title="This function calls soundio_flush_events then blocks until another event is ready or you call soundio...">soundio_wait_events</a>. If you do not supply a callback, the default will crash your program with an error message. </p>
+<p>Called when the backend disconnects. For example, when the JACK server shuts down. When this happens, listing devices and opening streams will always fail with SoundIoErrorBackendDisconnected. This callback is only called during a call to <a class="el" href="soundio_8h.html#a71d0da4c89d66f8115127747086e54d0" title="When you call this, the SoundIo::on_devices_change and SoundIo::on_events_signal callbacks might be c...">soundio_flush_events</a> or <a class="el" href="soundio_8h.html#a08cb0702839f4b416991f52a574ffda9" title="This function calls soundio_flush_events then blocks until another event is ready or you call soundio...">soundio_wait_events</a>. If you do not supply a callback, the default will crash your program with an error message. This callback is also called when the thread that retrieves device information runs into an unrecoverable condition such as running out of memory.</p>
+<p>Possible errors:</p>
+<ul>
+<li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a9f2a3a4b10559efd9f3c96d67e635146" title="Backend server shutdown or became inactive. ">SoundIoErrorBackendDisconnected</a></li>
+<li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a6c50795841b6fbfc069a25cba2f0a983" title="Out of memory. ">SoundIoErrorNoMem</a></li>
+<li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5aaa836dc9ad00f2178bd1895eace2cfde" title="A system resource other than memory was not available. ">SoundIoErrorSystemResources</a></li>
+<li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5aeb4e8bddfe4a31d38fd83e61a2870b20" title="Attempted to open a device and failed. ">SoundIoErrorOpeningDevice</a> - unexpected problem accessing device information </li>
+</ul>
 
 </div>
 </div>
