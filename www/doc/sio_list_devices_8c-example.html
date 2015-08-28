@@ -79,7 +79,11 @@ $(document).ready(function(){initNavTree('sio_list_devices_8c-example.html','');
 <div class="line"><span class="comment">// list or keep a watch on audio devices</span></div>
 <div class="line"></div>
 <div class="line"><span class="keyword">static</span> <span class="keywordtype">int</span> usage(<span class="keywordtype">char</span> *exe) {</div>
-<div class="line">    fprintf(stderr, <span class="stringliteral">&quot;Usage: %s [--watch] [--backend dummy|alsa|pulseaudio|jack|coreaudio|wasapi]\n&quot;</span>, exe);</div>
+<div class="line">    fprintf(stderr, <span class="stringliteral">&quot;Usage: %s [options]\n&quot;</span></div>
+<div class="line">            <span class="stringliteral">&quot;Options:\n&quot;</span></div>
+<div class="line">            <span class="stringliteral">&quot;  [--watch]\n&quot;</span></div>
+<div class="line">            <span class="stringliteral">&quot;  [--backend dummy|alsa|pulseaudio|jack|coreaudio|wasapi]\n&quot;</span></div>
+<div class="line">            <span class="stringliteral">&quot;  [--short]\n&quot;</span>, exe);</div>
 <div class="line">    <span class="keywordflow">return</span> 1;</div>
 <div class="line">}</div>
 <div class="line"></div>
@@ -94,10 +98,14 @@ $(document).ready(function(){initNavTree('sio_list_devices_8c-example.html','');
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"></div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">bool</span> short_output = <span class="keyword">false</span>;</div>
+<div class="line"></div>
 <div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> print_device(<span class="keyword">struct</span> <a name="_a5"></a><a class="code" href="structSoundIoDevice.html">SoundIoDevice</a> *device, <span class="keywordtype">bool</span> is_default) {</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *default_str = is_default ? <span class="stringliteral">&quot; (default)&quot;</span> : <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *raw_str = device-&gt;<a name="a6"></a><a class="code" href="structSoundIoDevice.html#afb73b9bd13e98a14a187567f508acebe">is_raw</a> ? <span class="stringliteral">&quot; (raw)&quot;</span> : <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line">    fprintf(stderr, <span class="stringliteral">&quot;%s%s%s\n&quot;</span>, device-&gt;<a name="a7"></a><a class="code" href="structSoundIoDevice.html#a364b77e81883dc151fce31d2793e80f3">name</a>, default_str, raw_str);</div>
+<div class="line">    <span class="keywordflow">if</span> (short_output)</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    fprintf(stderr, <span class="stringliteral">&quot;  id: %s\n&quot;</span>, device-&gt;<a name="a8"></a><a class="code" href="structSoundIoDevice.html#a7413ecdfdc99f2b89e60fff87c1f8483">id</a>);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">if</span> (device-&gt;<a name="a9"></a><a class="code" href="structSoundIoDevice.html#a129f523c7d43096985c058bc67fe3b6c">probe_error</a>) {</div>
@@ -179,6 +187,8 @@ $(document).ready(function(){initNavTree('sio_list_devices_8c-example.html','');
 <div class="line">        <span class="keywordtype">char</span> *arg = argv[i];</div>
 <div class="line">        <span class="keywordflow">if</span> (strcmp(<span class="stringliteral">&quot;--watch&quot;</span>, arg) == 0) {</div>
 <div class="line">            watch = <span class="keyword">true</span>;</div>
+<div class="line">        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(<span class="stringliteral">&quot;--short&quot;</span>, arg) == 0) {</div>
+<div class="line">            short_output = <span class="keyword">true</span>;</div>
 <div class="line">        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (arg[0] == <span class="charliteral">&#39;-&#39;</span> &amp;&amp; arg[1] == <span class="charliteral">&#39;-&#39;</span>) {</div>
 <div class="line">            i += 1;</div>
 <div class="line">            <span class="keywordflow">if</span> (i &gt;= argc) {</div>

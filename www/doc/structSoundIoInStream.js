@@ -9,6 +9,7 @@ var structSoundIoInStream =
     [ "layout_error", "structSoundIoInStream.html#a8a9eb335cdc4f9dc527076d3b7cc1fae", null ],
     [ "name", "structSoundIoInStream.html#a34d05caa88a0e18cfa9c4f534b097b38", null ],
     [ "non_terminal_hint", "structSoundIoInStream.html#aff49aedaf4f8cb04360dd5f0273e2a5d", null ],
+    [ "overflow_callback", "structSoundIoInStream.html#a5fe2403982700d0786aca624aa924325", null ],
     [ "read_callback", "structSoundIoInStream.html#aecda2dbb80f79bee8f906c88fd6c00d9", null ],
     [ "sample_rate", "structSoundIoInStream.html#a08f2e3f2d8818eb8581f78859c85fbd1", null ],
     [ "software_latency", "structSoundIoInStream.html#a39160da93a68220f8cb1d1f10b0e7a3d", null ],

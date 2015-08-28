@@ -122,7 +122,7 @@ Data Fields</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The size of this struct is not part of the API or ABI. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#_a33">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#_a1">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#_a33">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#_a0">sio_sine.c</a>.</dd>
 </dl></div><h2 class="groupheader">Field Documentation</h2>
 <a class="anchor" id="a799cd8220282eee3d21b6a0511e9533a"></a>
 <div class="memitem">
@@ -209,7 +209,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Defaults to Stereo, if available, followed by the first layout supported. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a38">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a7">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a38">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a6">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -272,7 +272,7 @@ Data Fields</h2></td></tr>
 
 <p>Sample rate is the number of frames per second. </p>
 <p>Defaults to 48000 (and then clamped into range). </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a80">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a2">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a80">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a1">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -287,7 +287,10 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Ignoring hardware latency, this is the number of seconds it takes for the last sample in a full buffer to be played. </p>
-<p>After you call <a class="el" href="soundio_8h.html#a67cb9152f3a450f9aa43e4896e83e307" title="After you call this function, SoundIoOutStream:software_latency is set to the correct value...">soundio_outstream_open</a>, this value is replaced with the actual software latency, as near to this value as possible. On systems that support clearing the buffer, this defaults to a large latency, potentially upwards of 2 seconds, with the understanding that you will call <a class="el" href="soundio_8h.html#acaa69696f87c86b0243948511f43568e" title="Clears the output stream buffer. ">soundio_outstream_clear_buffer</a> when you want to reduce the latency to 0. On systems that do not support clearing the buffer, this defaults to a reasonable lower latency value. If the device has unknown software latency min and max values, you may still set this, but you might not get the value you requested. For PulseAudio, if you set this value to non-default, it sets <code>PA_STREAM_ADJUST_LATENCY</code> and is the value used for <code>maxlength</code> and <code>tlength</code>. For JACK, this value is always equal to <a class="el" href="structSoundIoDevice.html#abd9907816714c0a736e74d67e17cdcd7" title="Software latency in seconds. ">SoundIoDevice::software_latency_current</a>` of the device. </p>
+<p>After you call <a class="el" href="soundio_8h.html#a67cb9152f3a450f9aa43e4896e83e307" title="After you call this function, SoundIoOutStream:software_latency is set to the correct value...">soundio_outstream_open</a>, this value is replaced with the actual software latency, as near to this value as possible. On systems that support clearing the buffer, this defaults to a large latency, potentially upwards of 2 seconds, with the understanding that you will call <a class="el" href="soundio_8h.html#acaa69696f87c86b0243948511f43568e" title="Clears the output stream buffer. ">soundio_outstream_clear_buffer</a> when you want to reduce the latency to 0. On systems that do not support clearing the buffer, this defaults to a reasonable lower latency value.</p>
+<p>On backends with high latencies (such as 2 seconds), <code>frame_count_min</code> will be 0, meaning you don't have to fill the entire buffer. In this case, the large buffer is there if you want it; you only have to fill as much as you want. On backends like JACK, <code>frame_count_min</code> will be equal to <code>frame_count_max</code> and if you don't fill that many frames, you will get glitches.</p>
+<p>If the device has unknown software latency min and max values, you may still set this, but you might not get the value you requested. For PulseAudio, if you set this value to non-default, it sets <code>PA_STREAM_ADJUST_LATENCY</code> and is the value used for <code>maxlength</code> and <code>tlength</code>.</p>
+<p>For JACK, this value is always equal to <a class="el" href="structSoundIoDevice.html#abd9907816714c0a736e74d67e17cdcd7" title="Software latency in seconds. ">SoundIoDevice::software_latency_current</a> of the device. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a81">sio_microphone.c</a>.</dd>
 </dl>
 </div>
@@ -334,7 +337,7 @@ Data Fields</h2></td></tr>
 
 <p>In this callback, you call <a class="el" href="soundio_8h.html#a20581ecb55ba7c72b9e364b5d616ba5b" title="Call this function when you are ready to begin writing to the device buffer. ">soundio_outstream_begin_write</a> and <a class="el" href="soundio_8h.html#ac4222691dfe8360a97f2943eff2128d7" title="Commits the write that you began with soundio_outstream_begin_write. ">soundio_outstream_end_write</a> as many times as necessary to write at minimum <code>frame_count_min</code> frames and at maximum <code>frame_count_max</code> frames. </p>
 <p><code>frame_count_max</code> will always be greater than 0. Note that you should write as many frames as you can; <code>frame_count_min</code> might be 0 and you can still get a buffer underflow if you always write <code>frame_count_min</code> frames. For Dummy, ALSA, and PulseAudio, <code>frame_count_min</code> will be 0. For JACK and CoreAudio <code>frame_count_min</code> will be equal to <code>frame_count_max</code>. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a82">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a0">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a82">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a33">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>

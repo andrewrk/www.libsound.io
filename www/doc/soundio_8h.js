@@ -200,6 +200,7 @@ var soundio_8h =
     [ "soundio_device_unref", "soundio_8h.html#a4bd2a0c66f5f5d6427a9d246e0d8243a", null ],
     [ "soundio_disconnect", "soundio_8h.html#ab1ba150181a923c316c88994c840908b", null ],
     [ "soundio_flush_events", "soundio_8h.html#a71d0da4c89d66f8115127747086e54d0", null ],
+    [ "soundio_force_device_scan", "soundio_8h.html#a7c04afbb72a9ae76e1934b62916670cb", null ],
     [ "soundio_format_string", "soundio_8h.html#a97b1dfc3511d591588ab56cf877ea2af", null ],
     [ "soundio_get_backend", "soundio_8h.html#ad2d958d93a0868a90da6e8b782bfc975", null ],
     [ "soundio_get_bytes_per_frame", "soundio_8h.html#abcace9874381f2b46dc77fa07974742d", null ],

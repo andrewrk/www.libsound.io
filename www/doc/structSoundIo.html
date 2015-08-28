@@ -107,7 +107,7 @@ Data Fields</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The size of this struct is not part of the API or ABI. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#_a28">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#_a49">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#_a20">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="backend_disconnect_recover_8c-example.html#_a1">backend_disconnect_recover.c</a>, <a class="el" href="sio_list_devices_8c-example.html#_a28">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#_a49">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#_a36">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#_a19">sio_sine.c</a>.</dd>
 </dl></div><h2 class="groupheader">Field Documentation</h2>
 <a class="anchor" id="a4d7782959728999bd6dcc8c7633a0d8a"></a>
 <div class="memitem">
@@ -136,7 +136,8 @@ Data Fields</h2></td></tr>
 
 <p>Read-only. </p>
 <p>After calling <a class="el" href="soundio_8h.html#abdace6c0ee81959e4284cfc36a5ce66d" title="Tries soundio_connect_backend on all available backends in order. ">soundio_connect</a> or <a class="el" href="soundio_8h.html#aaa26217716f3cd99932f988a017c56f1" title="Instead of calling soundio_connect you may call this function to try a specific backend. ">soundio_connect_backend</a>, this field tells which backend is currently connected. </p>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="backend_disconnect_recover_8c-example.html#a14">backend_disconnect_recover.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="a81f4db36631b61ffde57b149698f59f6"></a>
@@ -195,7 +196,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Optional callback. </p>
-<p>Called when the backend disconnects. For example, when the JACK server shuts down. When this happens, listing devices and opening streams will always fail with SoundIoErrorBackendDisconnected. This callback is only called during a call to <a class="el" href="soundio_8h.html#a71d0da4c89d66f8115127747086e54d0" title="When you call this, the SoundIo::on_devices_change and SoundIo::on_events_signal callbacks might be c...">soundio_flush_events</a> or <a class="el" href="soundio_8h.html#a08cb0702839f4b416991f52a574ffda9" title="This function calls soundio_flush_events then blocks until another event is ready or you call soundio...">soundio_wait_events</a>. If you do not supply a callback, the default will crash your program with an error message. This callback is also called when the thread that retrieves device information runs into an unrecoverable condition such as running out of memory.</p>
+<p>Called when the backend disconnects. For example, when the JACK server shuts down. When this happens, listing devices and opening streams will always fail with SoundIoErrorBackendDisconnected. This callback is only called during a call to <a class="el" href="soundio_8h.html#a71d0da4c89d66f8115127747086e54d0" title="Atomically update information for all connected devices. ">soundio_flush_events</a> or <a class="el" href="soundio_8h.html#a08cb0702839f4b416991f52a574ffda9" title="This function calls soundio_flush_events then blocks until another event is ready or you call soundio...">soundio_wait_events</a>. If you do not supply a callback, the default will crash your program with an error message. This callback is also called when the thread that retrieves device information runs into an unrecoverable condition such as running out of memory.</p>
 <p>Possible errors:</p>
 <ul>
 <li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a9f2a3a4b10559efd9f3c96d67e635146" title="Backend server shutdown or became inactive. ">SoundIoErrorBackendDisconnected</a></li>
@@ -203,7 +204,8 @@ Data Fields</h2></td></tr>
 <li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5aaa836dc9ad00f2178bd1895eace2cfde" title="A system resource other than memory was not available. ">SoundIoErrorSystemResources</a></li>
 <li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5aeb4e8bddfe4a31d38fd83e61a2870b20" title="Attempted to open a device and failed. ">SoundIoErrorOpeningDevice</a> - unexpected problem accessing device information </li>
 </ul>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="backend_disconnect_recover_8c-example.html#a12">backend_disconnect_recover.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="a1f0689106f1bfcd5cba8aa3695781d1f"></a>
@@ -217,7 +219,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Optional callback. </p>
-<p>Called when the list of devices change. Only called during a call to <a class="el" href="soundio_8h.html#a71d0da4c89d66f8115127747086e54d0" title="When you call this, the SoundIo::on_devices_change and SoundIo::on_events_signal callbacks might be c...">soundio_flush_events</a> or <a class="el" href="soundio_8h.html#a08cb0702839f4b416991f52a574ffda9" title="This function calls soundio_flush_events then blocks until another event is ready or you call soundio...">soundio_wait_events</a>. </p>
+<p>Called when the list of devices change. Only called during a call to <a class="el" href="soundio_8h.html#a71d0da4c89d66f8115127747086e54d0" title="Atomically update information for all connected devices. ">soundio_flush_events</a> or <a class="el" href="soundio_8h.html#a08cb0702839f4b416991f52a574ffda9" title="This function calls soundio_flush_events then blocks until another event is ready or you call soundio...">soundio_wait_events</a>. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a46">sio_list_devices.c</a>.</dd>
 </dl>
 </div>

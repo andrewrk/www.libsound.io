@@ -136,7 +136,7 @@ Data Fields</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The size of this struct is not part of the API or ABI. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#_a5">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#_a57">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#_a26">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#_a5">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#_a57">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#_a41">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#_a25">sio_sine.c</a>.</dd>
 </dl></div><h2 class="groupheader">Field Documentation</h2>
 <a class="anchor" id="ad0bb990b55420890b1b6eb8f1e3b0db0"></a>
 <div class="memitem">
@@ -210,7 +210,7 @@ Data Fields</h2></td></tr>
 
 <p>List of formats this device supports. </p>
 <p>See also <a class="el" href="structSoundIoDevice.html#acca754332130debf2180f13ec83b5f8c" title="A device is either a raw device or it is a virtual device that is provided by a software mixing servi...">SoundIoDevice::current_format</a>. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a22">sio_list_devices.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a22">sio_list_devices.c</a>, and <a class="el" href="sio_record_8c-example.html#a56">sio_record.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -226,7 +226,7 @@ Data Fields</h2></td></tr>
 
 <p>A string of bytes that uniquely identifies this device. </p>
 <p>If the same physical device supports both input and output, that makes one <a class="el" href="structSoundIoDevice.html" title="The size of this struct is not part of the API or ABI. ">SoundIoDevice</a> for the input and one <a class="el" href="structSoundIoDevice.html" title="The size of this struct is not part of the API or ABI. ">SoundIoDevice</a> for the output. In this case, the id of each <a class="el" href="structSoundIoDevice.html" title="The size of this struct is not part of the API or ABI. ">SoundIoDevice</a> will be the same, and <a class="el" href="structSoundIoDevice.html#ad0bb990b55420890b1b6eb8f1e3b0db0" title="Tells whether this device is an input device or an output device. ">SoundIoDevice::aim</a> will be different. Additionally, if the device supports raw mode, there may be up to four devices with the same id: one for each value of <a class="el" href="structSoundIoDevice.html#afb73b9bd13e98a14a187567f508acebe" title="Raw means that you are directly opening the hardware device and not going through a proxy such as dmi...">SoundIoDevice::is_raw</a> and one for each value of <a class="el" href="structSoundIoDevice.html#ad0bb990b55420890b1b6eb8f1e3b0db0" title="Tells whether this device is an input device or an output device. ">SoundIoDevice::aim</a>. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a8">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a60">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a28">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a8">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a60">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a45">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a27">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -242,7 +242,7 @@ Data Fields</h2></td></tr>
 
 <p>Raw means that you are directly opening the hardware device and not going through a proxy such as dmix, PulseAudio, or JACK. </p>
 <p>When you open a raw device, other applications on the computer are not able to simultaneously access the device. Raw devices do not perform automatic resampling and thus tend to have fewer formats available. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a6">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a59">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a29">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a6">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a59">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a44">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a28">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -271,7 +271,7 @@ Data Fields</h2></td></tr>
 
 <p>Channel layouts are handled similarly to <a class="el" href="structSoundIoDevice.html#acf6c78f0835ec03f3afefd9e6d29c3bd" title="List of formats this device supports. ">SoundIoDevice::formats</a>. </p>
 <p>If this information is missing due to a <a class="el" href="structSoundIoDevice.html#a129f523c7d43096985c058bc67fe3b6c" title="This is set to a SoundIoError representing the result of the device probe. ">SoundIoDevice::probe_error</a>, layouts will be NULL. It's OK to modify this data, for example calling <a class="el" href="soundio_8h.html#adaf662c416186678aef5388823c0ff4c" title="Sorts by channel count, descending. ">soundio_sort_channel_layouts</a> on it. Devices are guaranteed to have at least 1 channel layout. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a12">sio_list_devices.c</a>, and <a class="el" href="sio_microphone_8c-example.html#a68">sio_microphone.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a12">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a68">sio_microphone.c</a>, and <a class="el" href="sio_record_8c-example.html#a51">sio_record.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -286,7 +286,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>User-friendly UTF-8 encoded text to describe the device. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a7">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a64">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a31">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a7">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a64">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a48">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a30">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -307,7 +307,7 @@ Data Fields</h2></td></tr>
 <li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5aeb4e8bddfe4a31d38fd83e61a2870b20" title="Attempted to open a device and failed. ">SoundIoErrorOpeningDevice</a></li>
 <li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a6c50795841b6fbfc069a25cba2f0a983" title="Out of memory. ">SoundIoErrorNoMem</a> </li>
 </ul>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a9">sio_list_devices.c</a>, and <a class="el" href="sio_sine_8c-example.html#a32">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a9">sio_list_devices.c</a>, and <a class="el" href="sio_sine_8c-example.html#a31">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -369,7 +369,7 @@ Data Fields</h2></td></tr>
 
 <p>Sample rate is the number of frames per second. </p>
 <p>Sample rate is handled very similar to <a class="el" href="structSoundIoDevice.html#acf6c78f0835ec03f3afefd9e6d29c3bd" title="List of formats this device supports. ">SoundIoDevice::formats</a>. If sample rate information is missing due to a probe error, the field will be set to NULL. Devices which have <a class="el" href="structSoundIoDevice.html#a129f523c7d43096985c058bc67fe3b6c" title="This is set to a SoundIoError representing the result of the device probe. ">SoundIoDevice::probe_error</a> set to <a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a2bc4445bc5ff20dd3469abd1a7121e6d">SoundIoErrorNone</a> are guaranteed to have at least 1 sample rate available. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a16">sio_list_devices.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a16">sio_list_devices.c</a>, and <a class="el" href="sio_record_8c-example.html#a53">sio_record.c</a>.</dd>
 </dl>
 </div>
 </div>

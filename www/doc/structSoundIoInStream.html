@@ -98,6 +98,9 @@ Data Fields</h2></td></tr>
 <tr class="memitem:aecda2dbb80f79bee8f906c88fd6c00d9"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSoundIoInStream.html#aecda2dbb80f79bee8f906c88fd6c00d9">read_callback</a> )(struct <a class="el" href="structSoundIoInStream.html">SoundIoInStream</a> *, int frame_count_min, int frame_count_max)</td></tr>
 <tr class="memdesc:aecda2dbb80f79bee8f906c88fd6c00d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">In this function call <a class="el" href="soundio_8h.html#a519ae0d334e2a09f060ec2288c0a3c1d" title="Call this function when you are ready to begin reading from the device buffer. ">soundio_instream_begin_read</a> and <a class="el" href="soundio_8h.html#a83cbd9dd915dcef4be97ce789abc17fe" title="This will drop all of the frames from when you called soundio_instream_begin_read. ">soundio_instream_end_read</a> as many times as necessary to read at minimum <code>frame_count_min</code> frames and at maximum <code>frame_count_max</code> frames.  <a href="#aecda2dbb80f79bee8f906c88fd6c00d9">More...</a><br/></td></tr>
 <tr class="separator:aecda2dbb80f79bee8f906c88fd6c00d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fe2403982700d0786aca624aa924325"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSoundIoInStream.html#a5fe2403982700d0786aca624aa924325">overflow_callback</a> )(struct <a class="el" href="structSoundIoInStream.html">SoundIoInStream</a> *)</td></tr>
+<tr class="memdesc:a5fe2403982700d0786aca624aa924325"><td class="mdescLeft">&#160;</td><td class="mdescRight">This optional callback happens when the sound device buffer is full, yet there is more captured audio to put in it.  <a href="#a5fe2403982700d0786aca624aa924325">More...</a><br/></td></tr>
+<tr class="separator:a5fe2403982700d0786aca624aa924325"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3114c2714379ba9e2b972129a82069e0"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSoundIoInStream.html#a3114c2714379ba9e2b972129a82069e0">error_callback</a> )(struct <a class="el" href="structSoundIoInStream.html">SoundIoInStream</a> *, int err)</td></tr>
 <tr class="memdesc:a3114c2714379ba9e2b972129a82069e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional callback.  <a href="#a3114c2714379ba9e2b972129a82069e0">More...</a><br/></td></tr>
 <tr class="separator:a3114c2714379ba9e2b972129a82069e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,7 +122,7 @@ Data Fields</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The size of this struct is not part of the API or ABI. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#_a19">sio_microphone.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#_a19">sio_microphone.c</a>, and <a class="el" href="sio_record_8c-example.html#_a19">sio_record.c</a>.</dd>
 </dl></div><h2 class="groupheader">Field Documentation</h2>
 <a class="anchor" id="a85a89a99de54b05975350a7436e443bd"></a>
 <div class="memitem">
@@ -147,7 +150,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>computed automatically when you call <a class="el" href="soundio_8h.html#a8ecf120bc886f31ee2642284dd0dbd81" title="After you call this function, SoundIoInStream::software_latency is set to the correct value...">soundio_instream_open</a> </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a29">sio_microphone.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a29">sio_microphone.c</a>, and <a class="el" href="sio_record_8c-example.html#a26">sio_record.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -191,7 +194,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Defaults to SoundIoFormatFloat32NE, followed by the first one supported. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a73">sio_microphone.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a73">sio_microphone.c</a>, and <a class="el" href="sio_record_8c-example.html#a60">sio_record.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -206,7 +209,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Defaults to Stereo, if available, followed by the first layout supported. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a26">sio_microphone.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a26">sio_microphone.c</a>, and <a class="el" href="sio_record_8c-example.html#a23">sio_record.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -255,6 +258,22 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5fe2403982700d0786aca624aa924325"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* SoundIoInStream::overflow_callback)(struct <a class="el" href="structSoundIoInStream.html">SoundIoInStream</a> *)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This optional callback happens when the sound device buffer is full, yet there is more captured audio to put in it. </p>
+<p>This is never fired for PulseAudio. This is called from the <a class="el" href="structSoundIoInStream.html#aecda2dbb80f79bee8f906c88fd6c00d9" title="In this function call soundio_instream_begin_read and soundio_instream_end_read as many times as nece...">SoundIoInStream::read_callback</a> thread context. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_record_8c-example.html#a63">sio_record.c</a>.</dd>
+</dl>
+</div>
+</div>
 <a class="anchor" id="aecda2dbb80f79bee8f906c88fd6c00d9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -267,7 +286,7 @@ Data Fields</h2></td></tr>
 
 <p>In this function call <a class="el" href="soundio_8h.html#a519ae0d334e2a09f060ec2288c0a3c1d" title="Call this function when you are ready to begin reading from the device buffer. ">soundio_instream_begin_read</a> and <a class="el" href="soundio_8h.html#a83cbd9dd915dcef4be97ce789abc17fe" title="This will drop all of the frames from when you called soundio_instream_begin_read. ">soundio_instream_end_read</a> as many times as necessary to read at minimum <code>frame_count_min</code> frames and at maximum <code>frame_count_max</code> frames. </p>
 <p>If you return from read_callback without having read <code>frame_count_min</code>, the frames will be dropped. <code>frame_count_max</code> is how many frames are available to read. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a76">sio_microphone.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a76">sio_microphone.c</a>, and <a class="el" href="sio_record_8c-example.html#a62">sio_record.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -283,7 +302,7 @@ Data Fields</h2></td></tr>
 
 <p>Sample rate is the number of frames per second. </p>
 <p>Defaults to max(sample_rate_min, min(sample_rate_max, 48000)) </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a74">sio_microphone.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a74">sio_microphone.c</a>, and <a class="el" href="sio_record_8c-example.html#a61">sio_record.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -298,7 +317,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Ignoring hardware latency, this is the number of seconds it takes for a captured sample to become available for reading. </p>
-<p>After you call <a class="el" href="soundio_8h.html#a8ecf120bc886f31ee2642284dd0dbd81" title="After you call this function, SoundIoInStream::software_latency is set to the correct value...">soundio_instream_open</a>, this value is replaced with the actual software latency, as near to this value as possible. A higher value means less CPU usage. Defaults to a large value, potentially upwards of 2 seconds. If the device has unknown software latency min and max values, you may still set this, but you might not get the value you requested. For PulseAudio, if you set this value to non-default, it sets <code>PA_STREAM_ADJUST_LATENCY</code> and is the value used for <code>fragsize</code>. For JACK, this value is always equal to <code>software_latency_current</code> of the device. </p>
+<p>After you call <a class="el" href="soundio_8h.html#a8ecf120bc886f31ee2642284dd0dbd81" title="After you call this function, SoundIoInStream::software_latency is set to the correct value...">soundio_instream_open</a>, this value is replaced with the actual software latency, as near to this value as possible. A higher value means less CPU usage. Defaults to a large value, potentially upwards of 2 seconds. If the device has unknown software latency min and max values, you may still set this, but you might not get the value you requested. For PulseAudio, if you set this value to non-default, it sets <code>PA_STREAM_ADJUST_LATENCY</code> and is the value used for <code>fragsize</code>. For JACK, this value is always equal to <a class="el" href="structSoundIoDevice.html#abd9907816714c0a736e74d67e17cdcd7" title="Software latency in seconds. ">SoundIoDevice::software_latency_current</a> </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a75">sio_microphone.c</a>.</dd>
 </dl>
 </div>
