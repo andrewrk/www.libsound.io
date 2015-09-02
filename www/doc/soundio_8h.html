@@ -1756,7 +1756,7 @@ Functions</h2></td></tr>
 
 <p>Atomically update information for all connected devices. </p>
 <p>Note that calling this function merely flips a pointer; the actual work of collecting device information is done elsewhere. It is performant to call this function many times per second.</p>
-<p>When you call this, the <a class="el" href="structSoundIo.html#a1f0689106f1bfcd5cba8aa3695781d1f" title="Optional callback. ">SoundIo::on_devices_change</a> and <a class="el" href="structSoundIo.html#ac9ac4828b342af8458afbdbe4500f862" title="Optional callback. ">SoundIo::on_events_signal</a> callbacks might be called. This is the only time those callbacks will be called.</p>
+<p>When you call this, the <a class="el" href="structSoundIo.html#a1f0689106f1bfcd5cba8aa3695781d1f" title="Optional callback. ">SoundIo::on_devices_change</a> might be called. This is the only time can be called.</p>
 <p>This must be called from the same thread as the thread in which you call these functions:</p>
 <ul>
 <li><a class="el" href="soundio_8h.html#a9ad70e0be5a826aafda5c38330b4405b" title="When you call soundio_flush_events, a snapshot of all device state is saved and these functions merel...">soundio_input_device_count</a></li>
