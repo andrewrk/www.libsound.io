@@ -483,7 +483,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:acaa69696f87c86b0243948511f43568e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the output stream buffer.  <a href="#acaa69696f87c86b0243948511f43568e">More...</a><br/></td></tr>
 <tr class="separator:acaa69696f87c86b0243948511f43568e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab234ea946623305f53e485111fd57dfe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#ab234ea946623305f53e485111fd57dfe">soundio_outstream_pause</a> (struct <a class="el" href="structSoundIoOutStream.html">SoundIoOutStream</a> *outstream, bool pause)</td></tr>
-<tr class="memdesc:ab234ea946623305f53e485111fd57dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the underyling device supports pausing, this pauses the stream and prevents <a class="el" href="structSoundIoOutStream.html#a9b6634417ccaec9b5c4376728efb186d" title="In this callback, you call soundio_outstream_begin_write and soundio_outstream_end_write as many time...">SoundIoOutStream::write_callback</a> from being called.  <a href="#ab234ea946623305f53e485111fd57dfe">More...</a><br/></td></tr>
+<tr class="memdesc:ab234ea946623305f53e485111fd57dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the underlying device supports pausing, this pauses the stream.  <a href="#ab234ea946623305f53e485111fd57dfe">More...</a><br/></td></tr>
 <tr class="separator:ab234ea946623305f53e485111fd57dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba34c36fa9c2d1ad32d56777c11aff46"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structSoundIoInStream.html">SoundIoInStream</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#aba34c36fa9c2d1ad32d56777c11aff46">soundio_instream_create</a> (struct <a class="el" href="structSoundIoDevice.html">SoundIoDevice</a> *device)</td></tr>
 <tr class="memdesc:aba34c36fa9c2d1ad32d56777c11aff46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates memory and sets defaults.  <a href="#aba34c36fa9c2d1ad32d56777c11aff46">More...</a><br/></td></tr>
@@ -571,7 +571,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a0">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a0">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a37">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a0">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a0">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a39">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -597,7 +597,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a8">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a8">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a39">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a8">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a8">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a41">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -623,7 +623,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a6">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a6">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a41">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a6">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a6">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a43">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -675,7 +675,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a2">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a2">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a40">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a2">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a2">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a42">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1203,7 +1203,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get a string representation of a <a class="el" href="soundio_8h.html#a27c98a78adca62ed32305d7433e8ca47">SoundIoBackend</a>. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="backend_disconnect_recover_8c-example.html#a13">backend_disconnect_recover.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="backend_disconnect_recover_8c-example.html#a13">backend_disconnect_recover.c</a>, and <a class="el" href="sio_sine_8c-example.html#a23">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1499,7 +1499,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>returns the index of the default output device returns -1 if there are no devices or if you never called <a class="el" href="soundio_8h.html#a71d0da4c89d66f8115127747086e54d0" title="Atomically update information for all connected devices. ">soundio_flush_events</a>. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a31">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a54">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a29">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a31">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a54">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a31">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1516,7 +1516,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a49">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a91">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a68">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a48">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a49">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a91">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a68">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a51">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1640,7 +1640,7 @@ Functions</h2></td></tr>
 
 <p>Convenience function. </p>
 <p>Returns whether <code>format</code> is included in the device's supported formats. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a71">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a55">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a36">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a71">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a55">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a38">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1719,7 +1719,7 @@ Functions</h2></td></tr>
 
 <p>Remove 1 to the reference count of <code>device</code>. </p>
 <p>Clean up if it was the last reference. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a34">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a61">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a46">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a47">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a34">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a61">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a46">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a50">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1767,7 +1767,7 @@ Functions</h2></td></tr>
 <li><a class="el" href="soundio_8h.html#a934838b4a1056540ec01d6ec9f5764d6" title="returns the index of the default output device returns -1 if there are no devices or if you never cal...">soundio_default_output_device_index</a></li>
 </ul>
 <p>Note that if you do not care about learning about updated devices, you might call this function only once ever and never call <a class="el" href="soundio_8h.html#a08cb0702839f4b416991f52a574ffda9" title="This function calls soundio_flush_events then blocks until another event is ready or you call soundio...">soundio_wait_events</a>. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="backend_disconnect_recover_8c-example.html#a17">backend_disconnect_recover.c</a>, <a class="el" href="sio_list_devices_8c-example.html#a48">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a53">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a40">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a23">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="backend_disconnect_recover_8c-example.html#a17">backend_disconnect_recover.c</a>, <a class="el" href="sio_list_devices_8c-example.html#a48">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a53">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a40">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a25">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2016,7 +2016,7 @@ Functions</h2></td></tr>
 
 <p>Always returns a device. </p>
 <p>Call <a class="el" href="soundio_8h.html#a4bd2a0c66f5f5d6427a9d246e0d8243a" title="Remove 1 to the reference count of device. ">soundio_device_unref</a> when done. <code>index</code> must be 0 &lt;= index &lt; <a class="el" href="soundio_8h.html#a4313adae0f0fb126b4c2dd36a4ec76de" title="Get the number of output devices. ">soundio_output_device_count</a> Returns NULL if you never called <a class="el" href="soundio_8h.html#a71d0da4c89d66f8115127747086e54d0" title="Atomically update information for all connected devices. ">soundio_flush_events</a> or if you provide invalid parameter values. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a35">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a63">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a26">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a35">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a63">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a28">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2283,7 +2283,7 @@ Functions</h2></td></tr>
 
 <p>Get the number of output devices. </p>
 <p>Returns -1 if you never called <a class="el" href="soundio_8h.html#a71d0da4c89d66f8115127747086e54d0" title="Atomically update information for all connected devices. ">soundio_flush_events</a>. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a29">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a62">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a24">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_list_devices_8c-example.html#a29">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a62">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a26">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2354,11 +2354,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clears the output stream buffer. </p>
-<p>You must call this function only from the <a class="el" href="structSoundIoOutStream.html#a9b6634417ccaec9b5c4376728efb186d" title="In this callback, you call soundio_outstream_begin_write and soundio_outstream_end_write as many time...">SoundIoOutStream::write_callback</a> thread context. Possible errors:</p>
+<p>This function can be called from any thread. This function can be called regardless of whether the outstream is paused or not. Some backends do not support clearing the buffer. On these backends this function will return SoundIoErrorIncompatibleBackend. Some devices do not support clearing the buffer. On these devices this function might return SoundIoErrorIncompatibleDevice. Possible errors:</p>
 <ul>
-<li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a92474d545ab73c3fddbde7358c41575f" title="An open stream had an error that can only be recovered from by destroying the stream and creating it ...">SoundIoErrorStreaming</a> </li>
+<li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a92474d545ab73c3fddbde7358c41575f" title="An open stream had an error that can only be recovered from by destroying the stream and creating it ...">SoundIoErrorStreaming</a></li>
+<li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5ac45be2ccd0cca2364b56a7f5919e8a8d" title="Attempted to use parameters that the backend cannot support. ">SoundIoErrorIncompatibleBackend</a></li>
+<li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a9923804fb92399924aeb192157766845" title="Attempted to use a device with parameters it cannot support. ">SoundIoErrorIncompatibleDevice</a> </li>
 </ul>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_sine_8c-example.html#a48">sio_sine.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="a6bea3bceca0c3aafa940ae1a224573bb"></a>
@@ -2377,7 +2380,7 @@ Functions</h2></td></tr>
 
 <p>Allocates memory and sets defaults. </p>
 <p>Next you should fill out the struct fields and then call <a class="el" href="soundio_8h.html#a67cb9152f3a450f9aa43e4896e83e307" title="After you call this function, SoundIoOutStream:software_latency is set to the correct value...">soundio_outstream_open</a>. Sets all fields to defaults. Returns <code>NULL</code> if and only if memory could not be allocated. See also <a class="el" href="soundio_8h.html#a80d9cc2dbc5178cbe9ae7b578f3c23d7" title="You may not call this function from the SoundIoOutStream::write_callback thread context. ">soundio_outstream_destroy</a> </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a78">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a32">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a78">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a34">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2396,7 +2399,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>You may not call this function from the <a class="el" href="structSoundIoOutStream.html#a9b6634417ccaec9b5c4376728efb186d" title="In this callback, you call soundio_outstream_begin_write and soundio_outstream_end_write as many time...">SoundIoOutStream::write_callback</a> thread context. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a89">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a46">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a89">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a49">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2458,7 +2461,7 @@ Functions</h2></td></tr>
 <li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5ac45be2ccd0cca2364b56a7f5919e8a8d" title="Attempted to use parameters that the backend cannot support. ">SoundIoErrorIncompatibleBackend</a> - SoundIoOutStream::channel_count is greater than the number of channels the backend can handle.</li>
 <li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a9923804fb92399924aeb192157766845" title="Attempted to use a device with parameters it cannot support. ">SoundIoErrorIncompatibleDevice</a> - stream parameters requested are not compatible with the chosen device. </li>
 </ul>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a84">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a42">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a84">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a44">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2486,15 +2489,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>If the underyling device supports pausing, this pauses the stream and prevents <a class="el" href="structSoundIoOutStream.html#a9b6634417ccaec9b5c4376728efb186d" title="In this callback, you call soundio_outstream_begin_write and soundio_outstream_end_write as many time...">SoundIoOutStream::write_callback</a> from being called. </p>
-<p>Otherwise this returns <a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a9923804fb92399924aeb192157766845" title="Attempted to use a device with parameters it cannot support. ">SoundIoErrorIncompatibleDevice</a>. You must call this function only from the <a class="el" href="structSoundIoOutStream.html#a9b6634417ccaec9b5c4376728efb186d" title="In this callback, you call soundio_outstream_begin_write and soundio_outstream_end_write as many time...">SoundIoOutStream::write_callback</a> thread context. Pausing when already paused or unpausing when already unpaused has no effect and always returns SoundIoErrorNone.</p>
+<p>If the underlying device supports pausing, this pauses the stream. </p>
+<p><a class="el" href="structSoundIoOutStream.html#a9b6634417ccaec9b5c4376728efb186d" title="In this callback, you call soundio_outstream_begin_write and soundio_outstream_end_write as many time...">SoundIoOutStream::write_callback</a> may be called a few more times if the buffer is not full. Pausing might put the hardware into a low power state which is ideal if your software is silent for some time. This function may be called any thread. Pausing when already paused or unpausing when already unpaused has no effect and always returns SoundIoErrorNone.</p>
 <p>Possible errors:</p>
 <ul>
 <li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a9f2a3a4b10559efd9f3c96d67e635146" title="Backend server shutdown or became inactive. ">SoundIoErrorBackendDisconnected</a></li>
 <li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a92474d545ab73c3fddbde7358c41575f" title="An open stream had an error that can only be recovered from by destroying the stream and creating it ...">SoundIoErrorStreaming</a></li>
-<li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a9923804fb92399924aeb192157766845" title="Attempted to use a device with parameters it cannot support. ">SoundIoErrorIncompatibleDevice</a> - device does not support pausing/unpausing </li>
+<li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a9923804fb92399924aeb192157766845" title="Attempted to use a device with parameters it cannot support. ">SoundIoErrorIncompatibleDevice</a> - device does not support pausing/unpausing. This error code might not be returned even if the device does not support pausing/unpausing. </li>
 </ul>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_sine_8c-example.html#a47">sio_sine.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="aa62e51d08df9e6c9f4670ba5c5524ef3"></a>
@@ -2519,7 +2523,7 @@ Functions</h2></td></tr>
 <li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5aaa836dc9ad00f2178bd1895eace2cfde" title="A system resource other than memory was not available. ">SoundIoErrorSystemResources</a></li>
 <li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a9f2a3a4b10559efd9f3c96d67e635146" title="Backend server shutdown or became inactive. ">SoundIoErrorBackendDisconnected</a> </li>
 </ul>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a87">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a44">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a87">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a46">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2832,7 +2836,7 @@ Functions</h2></td></tr>
 
 <p>This function calls <a class="el" href="soundio_8h.html#a71d0da4c89d66f8115127747086e54d0" title="Atomically update information for all connected devices. ">soundio_flush_events</a> then blocks until another event is ready or you call <a class="el" href="soundio_8h.html#aeffbeb0607eeca24c039e33e53b329a6" title="Makes soundio_wait_events stop blocking. ">soundio_wakeup</a>. </p>
 <p>Be ready for spurious wakeups. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="backend_disconnect_recover_8c-example.html#a15">backend_disconnect_recover.c</a>, <a class="el" href="sio_list_devices_8c-example.html#a47">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a88">sio_microphone.c</a>, <a class="el" href="sio_record_8c-example.html#a66">sio_record.c</a>, and <a class="el" href="sio_sine_8c-example.html#a45">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="backend_disconnect_recover_8c-example.html#a15">backend_disconnect_recover.c</a>, <a class="el" href="sio_list_devices_8c-example.html#a47">sio_list_devices.c</a>, <a class="el" href="sio_microphone_8c-example.html#a88">sio_microphone.c</a>, and <a class="el" href="sio_record_8c-example.html#a66">sio_record.c</a>.</dd>
 </dl>
 </div>
 </div>

@@ -194,7 +194,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Defaults to <a class="el" href="soundio_8h.html#a030eb3a5e02ada7c03f6d16528ce9b3a">SoundIoFormatFloat32NE</a>, followed by the first one supported. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a79">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a38">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a79">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a40">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -225,7 +225,7 @@ Data Fields</h2></td></tr>
 
 <p>If setting the channel layout fails for some reason, this field is set to an error code. </p>
 <p>Possible error codes are: <a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a9923804fb92399924aeb192157766845" title="Attempted to use a device with parameters it cannot support. ">SoundIoErrorIncompatibleDevice</a> </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_sine_8c-example.html#a43">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_sine_8c-example.html#a45">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -241,7 +241,7 @@ Data Fields</h2></td></tr>
 
 <p>Optional: Name of the stream. </p>
 <p>Defaults to "SoundIoOutStream" PulseAudio uses this for the stream name. JACK uses this for the client name of the client that connects when you open the stream. WASAPI uses this for the session display name. Must not contain a colon (":"). </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_sine_8c-example.html#a35">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_sine_8c-example.html#a37">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -307,7 +307,7 @@ Data Fields</h2></td></tr>
 
 <p>This optional callback happens when the sound device runs out of buffered audio data to play. </p>
 <p>After this occurs, the outstream waits until the buffer is full to resume playback. This is called from the <a class="el" href="structSoundIoOutStream.html#a9b6634417ccaec9b5c4376728efb186d" title="In this callback, you call soundio_outstream_begin_write and soundio_outstream_end_write as many time...">SoundIoOutStream::write_callback</a> thread context. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a83">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a34">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a83">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a36">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -337,7 +337,7 @@ Data Fields</h2></td></tr>
 
 <p>In this callback, you call <a class="el" href="soundio_8h.html#a20581ecb55ba7c72b9e364b5d616ba5b" title="Call this function when you are ready to begin writing to the device buffer. ">soundio_outstream_begin_write</a> and <a class="el" href="soundio_8h.html#ac4222691dfe8360a97f2943eff2128d7" title="Commits the write that you began with soundio_outstream_begin_write. ">soundio_outstream_end_write</a> as many times as necessary to write at minimum <code>frame_count_min</code> frames and at maximum <code>frame_count_max</code> frames. </p>
 <p><code>frame_count_max</code> will always be greater than 0. Note that you should write as many frames as you can; <code>frame_count_min</code> might be 0 and you can still get a buffer underflow if you always write <code>frame_count_min</code> frames. For Dummy, ALSA, and PulseAudio, <code>frame_count_min</code> will be 0. For JACK and CoreAudio <code>frame_count_min</code> will be equal to <code>frame_count_max</code>. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a82">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a33">sio_sine.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a82">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a35">sio_sine.c</a>.</dd>
 </dl>
 </div>
 </div>
