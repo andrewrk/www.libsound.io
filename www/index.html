@@ -29,7 +29,21 @@
     </div>
 
     <div class="highlight">
-      <p>This library is an abstraction; however in the delicate balance between performance and power, and API convenience, the scale is tipped closer to the former. Features that only exist in some sound backends are exposed.</p>
+      <p>
+      libsoundio is a lightweight abstraction over various sound drivers. It provides a
+      well-documented API that operates consistently regardless of the sound driver it
+      connects to. It performs no buffering or processing on your behalf; instead exposing
+      the raw power of the underlying backend.
+      </p>
+      <p>
+      libsoundio is appropriate for games, music players, digital audio workstations,
+      and various utilities.
+      </p>
+      <p>
+      libsoundio is serious about robustness. It even handles
+      <a href="https://github.com/andrewrk/malcheck">out of memory conditions</a>
+      correctly.
+      </p>
       <h2>Features &amp; Limitations</h2>
       <div class="features-limitations">
         <ul>
@@ -63,6 +77,12 @@
           <li>Detects which input device is default and which output device is default.</li>
           <li>Ability to connect to multiple backends at once. For example you could have an ALSA device open and a JACK device open at the same time.</li>
           <li>Meticulously checks all return codes and memory allocations and uses meaningful error codes.</li>
+          <li>
+            Compare libsoundio to:
+            <a href="https://github.com/andrewrk/libsoundio/wiki/libsoundio-vs-PortAudio">PortAudio</a>,
+            <a href="https://github.com/andrewrk/libsoundio/wiki/libsoundio-vs-RtAudio">RtAudio</a>,
+            or <a href="https://github.com/andrewrk/libsoundio/wiki/libsoundio-vs-SDL2">SDL2</a>.
+          </li>
         </ul>
       </div>
       <h2>Basic Sine Wave Example</h2>
