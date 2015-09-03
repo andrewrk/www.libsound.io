@@ -25,7 +25,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libsoundio
-   &#160;<span id="projectnumber">0.0.0</span>
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -485,6 +485,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ab234ea946623305f53e485111fd57dfe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#ab234ea946623305f53e485111fd57dfe">soundio_outstream_pause</a> (struct <a class="el" href="structSoundIoOutStream.html">SoundIoOutStream</a> *outstream, bool pause)</td></tr>
 <tr class="memdesc:ab234ea946623305f53e485111fd57dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the underlying device supports pausing, this pauses the stream.  <a href="#ab234ea946623305f53e485111fd57dfe">More...</a><br/></td></tr>
 <tr class="separator:ab234ea946623305f53e485111fd57dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8a7eb7709a7a6e6fdef8172a8a673e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#aa8a7eb7709a7a6e6fdef8172a8a673e8">soundio_outstream_get_latency</a> (struct <a class="el" href="structSoundIoOutStream.html">SoundIoOutStream</a> *outstream, double *out_latency)</td></tr>
+<tr class="memdesc:aa8a7eb7709a7a6e6fdef8172a8a673e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain the total number of seconds that the next frame written after the last frame written with <a class="el" href="soundio_8h.html#ac4222691dfe8360a97f2943eff2128d7" title="Commits the write that you began with soundio_outstream_begin_write. ">soundio_outstream_end_write</a> will take to become audible.  <a href="#aa8a7eb7709a7a6e6fdef8172a8a673e8">More...</a><br/></td></tr>
+<tr class="separator:aa8a7eb7709a7a6e6fdef8172a8a673e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba34c36fa9c2d1ad32d56777c11aff46"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structSoundIoInStream.html">SoundIoInStream</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#aba34c36fa9c2d1ad32d56777c11aff46">soundio_instream_create</a> (struct <a class="el" href="structSoundIoDevice.html">SoundIoDevice</a> *device)</td></tr>
 <tr class="memdesc:aba34c36fa9c2d1ad32d56777c11aff46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates memory and sets defaults.  <a href="#aba34c36fa9c2d1ad32d56777c11aff46">More...</a><br/></td></tr>
 <tr class="separator:aba34c36fa9c2d1ad32d56777c11aff46"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -506,6 +509,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8bc693aa2df8897c45d62fd3266fb53a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#a8bc693aa2df8897c45d62fd3266fb53a">soundio_instream_pause</a> (struct <a class="el" href="structSoundIoInStream.html">SoundIoInStream</a> *instream, bool pause)</td></tr>
 <tr class="memdesc:a8bc693aa2df8897c45d62fd3266fb53a"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the underyling device supports pausing, this pauses the stream and prevents <a class="el" href="structSoundIoInStream.html#aecda2dbb80f79bee8f906c88fd6c00d9" title="In this function call soundio_instream_begin_read and soundio_instream_end_read as many times as nece...">SoundIoInStream::read_callback</a> from being called.  <a href="#a8bc693aa2df8897c45d62fd3266fb53a">More...</a><br/></td></tr>
 <tr class="separator:a8bc693aa2df8897c45d62fd3266fb53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5a8c166c6c29629e69f800365f2e7ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#ae5a8c166c6c29629e69f800365f2e7ec">soundio_instream_get_latency</a> (struct <a class="el" href="structSoundIoInStream.html">SoundIoInStream</a> *instream, double *out_latency)</td></tr>
+<tr class="memdesc:ae5a8c166c6c29629e69f800365f2e7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain the number of seconds that the next frame of sound being captured will take to arrive in the buffer, plus the amount of time that is represented in the buffer.  <a href="#ae5a8c166c6c29629e69f800365f2e7ec">More...</a><br/></td></tr>
+<tr class="separator:ae5a8c166c6c29629e69f800365f2e7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcd0a77db4f04fbf5137abc7becda860"><td class="memItemLeft" align="right" valign="top">struct SoundIoRingBuffer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#adcd0a77db4f04fbf5137abc7becda860">soundio_ring_buffer_create</a> (struct <a class="el" href="structSoundIo.html">SoundIo</a> *soundio, int requested_capacity)</td></tr>
 <tr class="memdesc:adcd0a77db4f04fbf5137abc7becda860"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>requested_capacity</code> in bytes.  <a href="#adcd0a77db4f04fbf5137abc7becda860">More...</a><br/></td></tr>
 <tr class="separator:adcd0a77db4f04fbf5137abc7becda860"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -515,13 +521,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:a0b146cc0a5e3d4dadf74ce0c2e27c809"><td class="mdescLeft">&#160;</td><td class="mdescRight">When you create a ring buffer, capacity might be more than the requested capacity for alignment purposes.  <a href="#a0b146cc0a5e3d4dadf74ce0c2e27c809">More...</a><br/></td></tr>
 <tr class="separator:a0b146cc0a5e3d4dadf74ce0c2e27c809"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ef789a8686ff3ec30758f96b19874ae"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#a1ef789a8686ff3ec30758f96b19874ae">soundio_ring_buffer_write_ptr</a> (struct SoundIoRingBuffer *ring_buffer)</td></tr>
-<tr class="memdesc:a1ef789a8686ff3ec30758f96b19874ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">don't write more than capacity  <a href="#a1ef789a8686ff3ec30758f96b19874ae">More...</a><br/></td></tr>
+<tr class="memdesc:a1ef789a8686ff3ec30758f96b19874ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do not write more than capacity.  <a href="#a1ef789a8686ff3ec30758f96b19874ae">More...</a><br/></td></tr>
 <tr class="separator:a1ef789a8686ff3ec30758f96b19874ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af629cd68ecf14004fd5321c57f92cfc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#af629cd68ecf14004fd5321c57f92cfc6">soundio_ring_buffer_advance_write_ptr</a> (struct SoundIoRingBuffer *ring_buffer, int count)</td></tr>
 <tr class="memdesc:af629cd68ecf14004fd5321c57f92cfc6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>count</code> in bytes.  <a href="#af629cd68ecf14004fd5321c57f92cfc6">More...</a><br/></td></tr>
 <tr class="separator:af629cd68ecf14004fd5321c57f92cfc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01ae9f776e0e372a7bdfe07f781af126"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#a01ae9f776e0e372a7bdfe07f781af126">soundio_ring_buffer_read_ptr</a> (struct SoundIoRingBuffer *ring_buffer)</td></tr>
-<tr class="memdesc:a01ae9f776e0e372a7bdfe07f781af126"><td class="mdescLeft">&#160;</td><td class="mdescRight">don't read more than capacity  <a href="#a01ae9f776e0e372a7bdfe07f781af126">More...</a><br/></td></tr>
+<tr class="memdesc:a01ae9f776e0e372a7bdfe07f781af126"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do not read more than capacity.  <a href="#a01ae9f776e0e372a7bdfe07f781af126">More...</a><br/></td></tr>
 <tr class="separator:a01ae9f776e0e372a7bdfe07f781af126"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a544a9a3791d3be76c8d6c39d6d4e9ac1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="soundio_8h.html#a544a9a3791d3be76c8d6c39d6d4e9ac1">soundio_ring_buffer_advance_read_ptr</a> (struct SoundIoRingBuffer *ring_buffer, int count)</td></tr>
 <tr class="memdesc:a544a9a3791d3be76c8d6c39d6d4e9ac1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>count</code> in bytes.  <a href="#a544a9a3791d3be76c8d6c39d6d4e9ac1">More...</a><br/></td></tr>
@@ -1756,7 +1762,11 @@ Functions</h2></td></tr>
 
 <p>Atomically update information for all connected devices. </p>
 <p>Note that calling this function merely flips a pointer; the actual work of collecting device information is done elsewhere. It is performant to call this function many times per second.</p>
-<p>When you call this, the <a class="el" href="structSoundIo.html#a1f0689106f1bfcd5cba8aa3695781d1f" title="Optional callback. ">SoundIo::on_devices_change</a> might be called. This is the only time can be called.</p>
+<p>When you call this, the following callbacks might be called:</p>
+<ul>
+<li><a class="el" href="structSoundIo.html#a1f0689106f1bfcd5cba8aa3695781d1f" title="Optional callback. ">SoundIo::on_devices_change</a></li>
+<li><a class="el" href="structSoundIo.html#ab4585af46cc289572f2a1d6b6f417fa9" title="Optional callback. ">SoundIo::on_backend_disconnect</a> This is the only time those callbacks can be called.</li>
+</ul>
 <p>This must be called from the same thread as the thread in which you call these functions:</p>
 <ul>
 <li><a class="el" href="soundio_8h.html#a9ad70e0be5a826aafda5c38330b4405b" title="When you call soundio_flush_events, a snapshot of all device state is saved and these functions merel...">soundio_input_device_count</a></li>
@@ -2170,6 +2180,40 @@ Functions</h2></td></tr>
 </dl>
 </div>
 </div>
+<a class="anchor" id="ae5a8c166c6c29629e69f800365f2e7ec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int soundio_instream_get_latency </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structSoundIoInStream.html">SoundIoInStream</a> *&#160;</td>
+          <td class="paramname"><em>instream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>out_latency</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtain the number of seconds that the next frame of sound being captured will take to arrive in the buffer, plus the amount of time that is represented in the buffer. </p>
+<p>This includes both software and hardware latency.</p>
+<p>This function must be called only from within <a class="el" href="structSoundIoInStream.html#aecda2dbb80f79bee8f906c88fd6c00d9" title="In this function call soundio_instream_begin_read and soundio_instream_end_read as many times as nece...">SoundIoInStream::read_callback</a>.</p>
+<p>Possible errors:</p>
+<ul>
+<li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a92474d545ab73c3fddbde7358c41575f" title="An open stream had an error that can only be recovered from by destroying the stream and creating it ...">SoundIoErrorStreaming</a> </li>
+</ul>
+
+</div>
+</div>
 <a class="anchor" id="a8ecf120bc886f31ee2642284dd0dbd81"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2426,6 +2470,40 @@ Functions</h2></td></tr>
 </ul>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a40">sio_microphone.c</a>, and <a class="el" href="sio_sine_8c-example.html#a10">sio_sine.c</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="aa8a7eb7709a7a6e6fdef8172a8a673e8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int soundio_outstream_get_latency </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structSoundIoOutStream.html">SoundIoOutStream</a> *&#160;</td>
+          <td class="paramname"><em>outstream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>out_latency</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtain the total number of seconds that the next frame written after the last frame written with <a class="el" href="soundio_8h.html#ac4222691dfe8360a97f2943eff2128d7" title="Commits the write that you began with soundio_outstream_begin_write. ">soundio_outstream_end_write</a> will take to become audible. </p>
+<p>This includes both software and hardware latency. In other words, if you call this function directly after calling <a class="el" href="soundio_8h.html#ac4222691dfe8360a97f2943eff2128d7" title="Commits the write that you began with soundio_outstream_begin_write. ">soundio_outstream_end_write</a>, this gives you the number of seconds that the next frame written will take to become audible.</p>
+<p>This function must be called only from within <a class="el" href="structSoundIoOutStream.html#a9b6634417ccaec9b5c4376728efb186d" title="In this callback, you call soundio_outstream_begin_write and soundio_outstream_end_write as many time...">SoundIoOutStream::write_callback</a>.</p>
+<p>Possible errors:</p>
+<ul>
+<li><a class="el" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5a92474d545ab73c3fddbde7358c41575f" title="An open stream had an error that can only be recovered from by destroying the stream and creating it ...">SoundIoErrorStreaming</a> </li>
+</ul>
+
 </div>
 </div>
 <a class="anchor" id="a67cb9152f3a450f9aa43e4896e83e307"></a>
@@ -2749,7 +2827,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>don't read more than capacity </p>
+<p>Do not read more than capacity. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a34">sio_microphone.c</a>.</dd>
 </dl>
 </div>
@@ -2768,7 +2846,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>don't write more than capacity </p>
+<p>Do not write more than capacity. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="sio_microphone_8c-example.html#a21">sio_microphone.c</a>.</dd>
 </dl>
 </div>

@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"soundio_8h.html#aef491940cf81c91cf8ce15783a294af0aa621e4d9ba88b595fc2bbec6bf91babd":[2,0,1,29,2],
+"soundio_8h.html#aef491940cf81c91cf8ce15783a294af0ab1064417d2969b46f8c8ee918f94b619":[2,0,1,29,10],
 "soundio_8h.html#aef491940cf81c91cf8ce15783a294af0ad5d9cfc9110d660ab4631bfffe676f82":[2,0,1,29,0],
 "soundio_8h.html#aef491940cf81c91cf8ce15783a294af0ae6292b7b3cfd20bcf858a719eb63a56f":[2,0,1,29,15],
 "soundio_8h.html#aef491940cf81c91cf8ce15783a294af0ae7d07d26dfdc6a3d796b115d5e4f9a08":[2,0,1,29,12],
@@ -7,8 +9,8 @@ var NAVTREEINDEX1 =
 "soundio_8h.html#aef491940cf81c91cf8ce15783a294af0af3e019e2192e18589cacdfed7067a1b5":[2,0,1,29,6],
 "soundio_8h.html#aef491940cf81c91cf8ce15783a294af0af63ade09b15474c8c9f283653c0a6aff":[2,0,1,29,13],
 "soundio_8h.html#aef491940cf81c91cf8ce15783a294af0af860706fddb29685f0a0093a3dfe510a":[2,0,1,29,8],
-"soundio_8h.html#aeffbeb0607eeca24c039e33e53b329a6":[2,0,1,96],
-"soundio_8h.html#af629cd68ecf14004fd5321c57f92cfc6":[2,0,1,84],
+"soundio_8h.html#aeffbeb0607eeca24c039e33e53b329a6":[2,0,1,98],
+"soundio_8h.html#af629cd68ecf14004fd5321c57f92cfc6":[2,0,1,86],
 "soundio_8h.html#af8d82cb0aabb2865decc35b08363ffa5":[2,0,1,8],
 "soundio_8h_source.html":[2,0,1],
 "structSoundIo.html":[1,0,0],

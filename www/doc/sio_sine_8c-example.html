@@ -25,7 +25,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libsoundio
-   &#160;<span id="projectnumber">0.0.0</span>
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -127,7 +127,7 @@ $(document).ready(function(){initNavTree('sio_sine_8c-example.html','');});
 <div class="line">    <span class="keywordflow">for</span> (;;) {</div>
 <div class="line">        <span class="keywordtype">int</span> frame_count = frames_left;</div>
 <div class="line">        <span class="keywordflow">if</span> ((err = <a name="a3"></a><a class="code" href="soundio_8h.html#a20581ecb55ba7c72b9e364b5d616ba5b">soundio_outstream_begin_write</a>(outstream, &amp;areas, &amp;frame_count))) {</div>
-<div class="line">            fprintf(stderr, <span class="stringliteral">&quot;%s\n&quot;</span>, <a name="a4"></a><a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
+<div class="line">            fprintf(stderr, <span class="stringliteral">&quot;unrecoverable stream error: %s\n&quot;</span>, <a name="a4"></a><a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
 <div class="line">            exit(1);</div>
 <div class="line">        }</div>
 <div class="line"></div>
@@ -150,7 +150,7 @@ $(document).ready(function(){initNavTree('sio_sine_8c-example.html','');});
 <div class="line">        <span class="keywordflow">if</span> ((err = <a name="a10"></a><a class="code" href="soundio_8h.html#ac4222691dfe8360a97f2943eff2128d7">soundio_outstream_end_write</a>(outstream))) {</div>
 <div class="line">            <span class="keywordflow">if</span> (err == <a name="a11"></a><a class="code" href="soundio_8h.html#a9aed679ba44aaa7d9bcbe2fa1b1156c5aaa4e3041da8a28a850c4520989a29ad8">SoundIoErrorUnderflow</a>)</div>
 <div class="line">                <span class="keywordflow">return</span>;</div>
-<div class="line">            fprintf(stderr, <span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
+<div class="line">            fprintf(stderr, <span class="stringliteral">&quot;unrecoverable stream error: %s\n&quot;</span>, <a class="code" href="soundio_8h.html#a819eae0cb9b58651b78467debc135b3b">soundio_strerror</a>(err));</div>
 <div class="line">            exit(1);</div>
 <div class="line">        }</div>
 <div class="line"></div>
