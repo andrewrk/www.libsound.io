@@ -10,10 +10,11 @@
       <nav class="container">
         <div class="logo">libsoundio</div>
         <ul class="nav-links">
+          <li><a href="#releases">Download</a></li>
           <li><a href="/doc">Documentation</a></li>
           <li><a href="https://github.com/andrewrk/libsoundio">Source Code</a></li>
           <li><a href="https://github.com/andrewrk/libsoundio/issues">Issue Tracker</a></li>
-          <li><a href="https://www.bountysource.com/teams/libsoundio">Support This Project</a></li>
+          <li><a href="https://salt.bountysource.com/teams/gdaw">Support This Project</a></li>
         </ul>
       </nav>
     </div>
@@ -22,17 +23,13 @@
       <div class="valign-parent">
         <div class="valign-child">
          <h1>cross-platform audio input and output</h1>
-         <h2>suitable for real-time &amp; consumer software</h2>
+         <h2>for real-time &amp; consumer software</h2>
         </div>
       </div>
     </div>
 
     <div class="highlight">
-      <p>C99 library providing cross-platform audio input and output. The API is suitable for real-time software such as digital audio workstations as well as consumer software such as music players.</p>
-
       <p>This library is an abstraction; however in the delicate balance between performance and power, and API convenience, the scale is tipped closer to the former. Features that only exist in some sound backends are exposed.</p>
-
-      <p>This project is a work-in-progress.</p>
       <h2>Features &amp; Limitations</h2>
       <div class="features-limitations">
         <ul>
@@ -174,12 +171,27 @@ int main(int argc, char **argv) {
     return 0;
 }</code></pre>
 
-      <h2>Get Started</h2>
-      <p>This is still a work-in-progress. If you want to see where the current progress is at, or maybe consider <a href="https://github.com/andrewrk/libsoundio#contributing">contributing</a>, feel free to pull the project from GitHub and build it on your machine.</p>
-      <p>The most up-to-date detailed instructions can be found on the project's README <a href="https://github.com/andrewrk/libsoundio#building">here</a>.</p>
+      <h2 id="releases">Releases</h2>
+      <h2>1.0.0</h2>
+      <h4>Source</h4>
+      <p>
+      <a href="/release/libsoundio-1.0.0.tar.gz">libsoundio-1.0.0.tar.gz</a>
+      </p>
+      <h4>Windows Binary</h4>
+      <p>
+      <a href="/release/libsoundio-1.0.0.zip">libsoundio-1.0.0.zip</a>
+      </p>
       <h2>About</h2>
-      <p>The driving motivation behind building out this project is to function as a dependency for <a href="http://genesisdaw.org/">Genesis Digital Audio Workstation</a>. It's also going to be used as a dependency for <a href="https://github.com/andrewrk/libgroove">libgroove</a>, which is a dependency of <a href="https://github.com/andrewrk/groovebasin">GrooveBasin</a>. libgroove is being used to test libsoundio.</p>
-      <p>This project is being developed by <a href="http://andrewkelley.me">Andrew Kelley</a>, who can be found on <a href="https://github.com/andrewrk/">GitHub</a>. There is a <a href="https://www.bountysource.com/teams/libsoundio">BountySource</a> being maintained as well.</p>
+      <p>libsoundio is the audio backend for
+      <a href="http://genesisdaw.org/">Genesis Digital Audio Workstation</a>.
+      It is also the audio backend for
+      <a href="http://groovebasin.com/">Groove Basin</a>.
+      </p>
+      <p>
+      The primary developer of libsoundio is <a href="http://andrewkelley.me">Andrew Kelley</a>, who can be found on <a href="https://github.com/andrewrk/">GitHub</a>.
+      Consider
+      <a href="https://salt.bountysource.com/teams/gdaw">financially supporting the project</a>.
+      </p>
     </div>
     <footer>
     </footer>
