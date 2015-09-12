@@ -196,6 +196,40 @@ int main(int argc, char **argv) {
 }</code></pre>
 
       <h2 id="releases">Releases</h2>
+      <h2>1.0.1</h2>
+      <h4>Source</h4>
+      <p>
+      <a href="/release/libsoundio-1.0.1.tar.gz">libsoundio-1.0.1.tar.gz</a>
+      </p>
+      <h4>Windows Binary</h4>
+      <p>
+      <a href="/release/libsoundio-1.0.1.zip">libsoundio-1.0.1.zip</a>
+      </p>
+      <p>
+        <a href="/doc-1.0.1">1.0.1 API Documentation</a>
+      </p>
+      <ul>
+        <li>libsoundio no longer depends on or links against libm.</li>
+        <li>ALSA: treat ALSA as unavailable when /dev/snd does not exist.</li>
+        <li>ALSA: remove duplicate assert.</li>
+        <li>ALSA: remove stray print statement.</li>
+        <li>ALSA: pausing returns error code when state is invalid instead of reaching
+        assertion failure in pcm.c.</li>
+        <li>JACK: fix infinite loop when refreshing devices.</li>
+        <li>PulseAudio: better clear buffer implementation.</li>
+        <li>dummy backend: fix sometimes calling <code>write_callback</code> with
+        <code>frame_count_max</code> equal to 0.</li>
+        <li>os: fix some variables accidentally not declared static.</li>
+        <li>macos: fix not cleaning up condition variables.</li>
+        <li>macos: avoid allocation when getting time.</li>
+        <li>docs: note that <code>read_callback</code> and <code>write_callback</code> must be real time safe.</li>
+        <li>docs: record example demonstrates proper real time safety by not calling
+        fwrite in <code>read_callback</code>.</li>
+        <li>docs: add note to record example about shutting down.</li>
+        <li>docs: make microphone example latency a command line argument.</li>
+        <li>build: fix build on linux with clang.</li>
+        <li>build: static libs, examples, and tests are optional.</li>
+      </ul>
       <h2>1.0.0</h2>
       <h4>Source</h4>
       <p>
@@ -205,6 +239,12 @@ int main(int argc, char **argv) {
       <p>
       <a href="/release/libsoundio-1.0.0.zip">libsoundio-1.0.0.zip</a>
       </p>
+      <p>
+      <a href="/doc-1.0.0">1.0.0 API Documentation</a>
+      </p>
+      <ul>
+        <li>Initial public release.</li>
+      </ul>
       <h2>About</h2>
       <p>libsoundio is the audio backend for
       <a href="http://genesisdaw.org/">Genesis Digital Audio Workstation</a>.
