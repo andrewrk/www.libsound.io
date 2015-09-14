@@ -41,7 +41,6 @@ p:last-of-type {
 }
 
 .navigation {
-  position: fixed;
   top: 0;
   width: 100%;
 }
@@ -78,7 +77,6 @@ nav .logo {
   color: white;
   height: 300px;
   text-align: center;
-  margin-top: 68px;
 }
 
 .hero-area h2 {
