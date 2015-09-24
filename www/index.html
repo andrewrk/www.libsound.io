@@ -196,6 +196,29 @@ int main(int argc, char **argv) {
 }</code></pre>
 
       <h2 id="releases">Releases</h2>
+      <h2>1.0.2</h2>
+      <h4>Source</h4>
+      <p>
+      <a href="/release/libsoundio-1.0.2.tar.gz">libsoundio-1.0.2.tar.gz</a>
+      </p>
+      <h4>Windows Binary</h4>
+      <p>
+      <a href="/release/libsoundio-1.0.2.zip">libsoundio-1.0.2.zip</a>
+      </p>
+      <p>
+        <a href="/doc-1.0.2">1.0.2 API Documentation</a>
+      </p>
+      <ul>
+      <li>build: fix GNUInstallDirs not working.</li>
+      <li>docs: fix incorrect docs for <code>soundio_instream_pause</code>.</li>
+      <li>PulseAudio: fix <code>soundio_outstream_pause</code> triggering assertion when called
+      from within <code>write_callback</code>.</li>
+      <li>fix mirrored memory not working on Linux (fixes corrupted data in ring
+      buffer).</li>
+      <li>os: fix crash when creating non high priority thread fails.</li>
+      <li>docs: fix typos and cleanup.</li>
+      <li>fix and add test for <code>soundio_device_nearest_sample_rate</code>.</li>
+      </ul>
       <h2>1.0.1</h2>
       <h4>Source</h4>
       <p>
