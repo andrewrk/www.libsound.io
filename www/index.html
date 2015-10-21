@@ -203,6 +203,28 @@ int main(int argc, char **argv) {
 }</code></pre>
 
       <h2 id="releases">Releases</h2>
+      <h2>1.0.3</h2>
+      <h4>Source</h4>
+      <p>
+      <a href="/release/libsoundio-1.0.3.tar.gz">libsoundio-1.0.3.tar.gz</a>
+      </p>
+      <h4>Windows Binary</h4>
+      <p>
+      <a href="/release/libsoundio-1.0.3.zip">libsoundio-1.0.3.zip</a>
+      </p>
+      <p>
+        <a href="/doc-1.0.3">1.0.3 API Documentation</a>
+      </p>
+      <ul>
+      <li>Architecture independent header files.</li>
+      <li>Add --latency and --sample-rate to sine example.</li>
+      <li>ALSA: fix deadlock under some circumstances.</li>
+      <li>dummy: fix deadlock when pause called from <code>write_callback</code>.</li>
+      <li>Fix double clean-up corruption when opening stream fails.</li>
+      <li>Add --device and --raw to underflow test.</li>
+      <li>ALSA: use period size to calculate buffer size, fixes opening output stream
+      sometimes resulting in an error.</li>
+      </ul>
       <h2>1.0.2</h2>
       <h4>Source</h4>
       <p>
