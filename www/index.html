@@ -203,6 +203,49 @@ int main(int argc, char **argv) {
 }</code></pre>
 
       <h2 id="releases">Releases</h2>
+      <h2>1.1.0</h2>
+      <h4>Source</h4>
+      <p>
+      <a href="/release/libsoundio-1.1.0.tar.gz">libsoundio-1.1.0.tar.gz</a>
+      </p>
+      <h4>Windows Binary</h4>
+      <p>
+      <a href="/release/libsoundio-1.1.0.zip">libsoundio-1.1.0.zip</a>
+      </p>
+      <p>
+        <a href="/doc-1.1.0">1.1.0 API Documentation</a>
+      </p>
+      <ul>
+        <li>JACK: delete broken pause implementation. Previously, calling
+          <code>soundio_outstream_pause</code> or <code>soundio_instream_pause</code> during the
+          <code>write_callback</code> or <code>read_callback</code> would cause a deadlock. Now, attempting
+          to pause always results in <code>SoundIoErrorBackendIncompatible</code>.</li>
+        <li>PulseAudio: improve latency handling code. It now passes the latency test
+          along with all the other backends.</li>
+        <li>PulseAudio: fix incorrect outstream <code>software_latency</code>.</li>
+        <li>libsoundio source code is now pure C, no C++ mixed in.</li>
+        <li>ALSA: better device detection.
+          <ul>
+            <li>No longer suppress sysdefault.</li>
+            <li>If default and sysdefault are missing, use the first device as the default
+              device.</li>
+          </ul>
+        </li>
+        <li>Workaround for Raspberry Pi driver that incorrectly reports itself as Output
+          when it is actually Input.</li>
+        <li>ALSA: let alsa lib choose period settings. Fixes behavior with many ALSA
+          devices.</li>
+        <li>ALSA: fix potential cleanup deadlock.</li>
+        <li>ALSA: fix crash for devices with null description, thanks to Charles Lehner.</li>
+        <li>CoreAudio: drop support for MacOS 10.9. There was a bug for this system that
+          was never resolved, so it didn’t work in the first place.</li>
+        <li>Record example handles device not found and probe errors gracefully.</li>
+        <li>Fix typo in microphone example, thanks to James Dyson.</li>
+        <li>Improve documentation.</li>
+        <li>New functions available: <code>soundio_version_string</code>, <code>soundio_version_major</code>,
+          <code>soundio_version_minor</code>, <code>soundio_version_patch</code>.</li>
+        <li>libsoundio source code now builds with MSVC, thanks to Raphaël Londeix.</li>
+      </ul>
       <h2>1.0.3</h2>
       <h4>Source</h4>
       <p>
