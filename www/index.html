@@ -1,5 +1,6 @@
 <html>
   <head>
+    <meta charset="utf-8">
     <title>libsoundio: cross-platform audio input and output</title>
     <link href="style.css" rel="stylesheet" type="text/css">
     <link href="github-gist.css" rel="stylesheet" type="text/css">
@@ -238,7 +239,7 @@ int main(int argc, char **argv) {
         <li>ALSA: fix potential cleanup deadlock.</li>
         <li>ALSA: fix crash for devices with null description, thanks to Charles Lehner.</li>
         <li>CoreAudio: drop support for MacOS 10.9. There was a bug for this system that
-          was never resolved, so it didn’t work in the first place.</li>
+          was never resolved, so it did not work in the first place.</li>
         <li>Record example handles device not found and probe errors gracefully.</li>
         <li>Fix typo in microphone example, thanks to James Dyson.</li>
         <li>Improve documentation.</li>
