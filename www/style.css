@@ -101,3 +101,9 @@ nav .logo {
   -o-column-break-inside: avoid;
   column-break-inside: avoid;
 }
+
+.date {
+  margin-left: 10px;
+  font-size: .7em;
+  font-weight: normal;
+}
