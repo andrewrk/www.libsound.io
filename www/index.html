@@ -131,13 +131,13 @@ static void write_callback(struct SoundIoOutStream *outstream,
         float pitch = 440.0f;
         float radians_per_second = pitch * 2.0f * PI;
         for (int frame = 0; frame &lt; frame_count; frame += 1) {
-            float sample = sinf((seconds_offset + frame * seconds_per_frame) * radians_per_second);
+            float sample = sin((seconds_offset + frame * seconds_per_frame) * radians_per_second);
             for (int channel = 0; channel &lt; layout-&gt;channel_count; channel += 1) {
                 float *ptr = (float*)(areas[channel].ptr + areas[channel].step * frame);
                 *ptr = sample;
             }
         }
-        seconds_offset += seconds_per_frame * frame_count;
+        seconds_offset = fmod(seconds_offset + seconds_per_frame * frame_count, 1.0);
 
         if ((err = soundio_outstream_end_write(outstream))) {
             fprintf(stderr, "%s\n", soundio_strerror(err));
@@ -352,6 +352,8 @@ int main(int argc, char **argv) {
         <li><a href="https://lmms.io/">LMMS</a> - cross platform music production software.</li>
         <li><a href="https://github.com/jaebird/SoundIOSharp">SoundIOSharp</a> - .NET bindings.</li>
         <li><a href="https://github.com/klingtnet/rsoundio">rsoundio</a> - Rust bindings.</li>
+        <li><a href="https://luapower.com/libsoundio">luapower/libsoundio</a> - Lua bindings.</li>
+        <li><a href="https://github.com/raph-amiard/ada-soundio">ada-soundio</a> - Ada bindings.</li>
         <li><a href="https://github.com/andrewrk/www.libsound.io/issues/new?title=Add%20_______%20to%20Projects%20Using%20libsoundio">Add yours</a></li>
       </ul>
       <h2>About</h2>
